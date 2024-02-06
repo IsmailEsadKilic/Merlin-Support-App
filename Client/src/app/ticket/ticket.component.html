@@ -1,0 +1,71 @@
+<div class="table-container">
+    <div>
+        <button class="btn btn-primary" routerLink="/ticket/add" [queryParams]="{id: 0}" routerLinkActive="active" style="float: right;">Yeni</button>
+        <h1 style="margin: 0; display: inline-block;">Ticketlar</h1>
+    </div>
+    <hr>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <!-- <th>Id</th> -->
+                <!-- <th>RowGuiid</th> -->
+                <th>Müşteri Ticket Id</th>
+                <th>Kayıt Tarihi</th>
+                <th>Kapanış Tarihi</th>
+                <th>İlk Cevap Tarihi</th>
+                <th>konu</th>
+                <th>Ürün</th>
+                <th>Takım</th>
+                <th>Takım Üyeleri</th>
+                <th>Öncelik</th>
+                <th>Müşteri</th>
+                <th>Ticket Durumu</th>
+                <th>Oluşturan</th>
+                <th style="width: 5%;">Düzenle</th>
+                <th style="width: 5%;">Sil</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let ticket of tickets">
+                <!-- <td>{{ticket.id}}</td> -->
+                <!-- <td>{{ticket.rowGuiid}}</td> -->
+                <td>{{ticket.customerTicketId}}</td>
+                <td>{{ticket.recordDate | displayDate}}</td>
+                <td>{{ticket.closedDate | displayDate}}</td>
+                <td>{{ticket.firstResponseTime | displayDate}}</td>
+                <td>{{ticket.subject}}</td>
+                <!-- <td>{{ticket.productId}}</td> -->
+                <td>{{ticket.productName}}</td>
+                <!-- <td>{{ticket.teamId}}</td> -->
+                <td>{{ticket.teamName}}</td>
+                <!-- <td>{{ticket.priorityId}}</td> -->
+                <td>{{ticket.teamMemberDtos | memberNames}}</td>
+                <td>{{ticket.priorityName}}</td>
+                <!-- <td>{{ticket.customerId}}</td> -->
+                <td>{{ticket.customerName}}</td>
+                <!-- <td>{{ticket.ticketStateId}}</td> -->
+                <td>{{ticket.ticketStateName}}</td>
+                <td>{{ticket.recordUserName}}</td>
+                <td><button class="btn btn-info" routerLink="/ticket/edit" [queryParams]="{ticketId: ticket.id}"
+                  ><i class="fa fa-gear"></i></button></td>
+                <td><button class="btn btn-danger" (click)="remove(ticket);"
+                    ><i class="fa fa-trash"></i></button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- id: number;
+rowGuid: string;
+customerTicketId: number;
+recordDate: Date;
+closedDate: Date;
+firstResponseTime: Date;
+subject: string;
+description: string;
+productId: number;
+teamId: number;
+priorityId: number;
+recordUserId: number;
+customerId: number;
+ticketStateId: number; -->

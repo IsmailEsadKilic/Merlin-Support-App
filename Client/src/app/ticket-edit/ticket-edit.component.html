@@ -1,0 +1,241 @@
+<!-- export interface Ticket {
+    id: number;
+    rowGuid: string;
+    customerTicketId: number;
+    recordDate: string;
+    closedDate: string;
+    firstResponseTime: string;
+    subject: string;
+    description: string;
+    productId: number;
+    productName: string;
+    teamId: number;
+    teamName: string;
+
+    teamMemberDtos: TeamMember[];
+
+    priorityId: number;
+    priorityName: string;
+    
+    recordUserId: number;
+
+    customerId: number;
+    customerName: string;
+
+    ticketStateId: number;
+    ticketStateName: string;
+
+    ticketTypeId: number;
+    ticketTypeName: string;
+} -->
+<!-- subject, status, priority, type, should be changeable -->
+
+<button routerLink="/ticket" class="btn btn-primary">Listeye Dön</button>
+<div class="row">
+    <h1 style="text-align: center;">{{productName}} Ticket</h1>
+    <hr>
+    <form [formGroup]="ticketEditForm" (ngSubmit)="onSubmit()" autocomplete="off" *ngIf="ticketEditFormInitialised" class="col-md-12">
+        <div class="row">
+            <div class="col-md-12">
+                <label>Konu</label>
+                <strong> *</strong>
+                <app-text-input [formControl]="$any(ticketEditForm.controls['subject'])" [label]="'Konu'"></app-text-input>
+            </div>
+            <div class="col-md-4">
+                <label>Öncelik</label>
+                <strong> *</strong>
+                <select class="form-select" [formControl]="$any(ticketEditForm.controls['priorityId'])">
+                    <option *ngFor="let priority of priorityLookup" [value]="priority.id">{{priority.priorityName}}</option>
+                </select>
+                <div class="invalid-feedback" *ngIf="$any(ticketEditForm.controls['priorityId']).errors?.['required']">lütfen öncelik seçin</div>
+            </div>
+            <div class="col-md-4">
+                <label>Tip</label>
+                <strong> *</strong>
+                <select class="form-select" [formControl]="$any(ticketEditForm.controls['ticketTypeId'])">
+                    <option *ngFor="let ticketType of ticketTypeLookup" [value]="ticketType.id">{{ticketType.name}}</option>
+                </select>
+                <div class="invalid-feedback" *ngIf="$any(ticketEditForm.controls['ticketTypeId']).errors?.['required']">lütfen tip seçin</div>
+            </div>
+            <div class="col-md-4">
+                <label>Durum</label>
+                <strong> *</strong>
+                <select class="form-select" [formControl]="$any(ticketEditForm.controls['ticketStateId'])">
+                    <option *ngFor="let ticketState of ticketStateLookup" [value]="ticketState.id">{{ticketState.name}}</option>
+                </select>
+                <div class="invalid-feedback" *ngIf="$any(ticketEditForm.controls['ticketStateId']).errors?.['required']">lütfen durum seçin</div>
+            </div>
+        </div>
+        <button class="btn btn-primary mt-2" type="submit" (click)="trySubmitTicketEditForm()">Kaydet</button>
+    </form>
+</div>
+<hr>
+<div class="row inner-add-0">
+        <!-- recordDate: string;
+        closedDate: string;
+        firstResponseTime: string;
+        subject: string;
+        description: string;
+        productName: string;
+        teamName: string;
+        teamMemberDtos: TeamMember[];
+        priorityName: string;    
+        customerName: string;
+        ticketStateName: string;
+        ticketTypeName: string; -->
+    <div class="col-md-12">
+        <h2 style="text-align: center;">Ticket Bilgileri</h2>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <div>
+                    <label>Konu <i class="fa fa-comment"></i></label>
+                    <strong>{{ticket.subject}}</strong>
+                </div>
+                <hr>
+                <div>
+                    <label>Ürün <i class="fa fa-cube"></i></label>
+                    <strong>{{ticket.productName}}</strong>
+                </div>
+                <hr>
+                <div>
+                    <label>Tip <i class="fa fa-tag"></i></label>
+                    <strong>{{ticket.ticketTypeName}}</strong>
+                </div>
+                <hr>
+                <div>
+                    <label>Müşteri <i class="fa fa-user"></i></label>
+                    <strong>{{ticket.customerName}}</strong>
+                </div>
+                <hr>
+                <div>
+                    <label>Departman <i class="fa fa-users"></i></label>
+                    <strong>{{ticket.teamName}}</strong>
+                </div>
+                <!-- <p>Ürün: {{ticket.productName}}</p>
+                
+                <p>Departman: {{ticket.teamName}}</p>
+                
+                <p>Müşteri: {{ticket.customerName}}</p>
+                
+                <p>Tip: {{ticket.ticketTypeName}}</p> -->
+                
+            </div>
+            <div class="col-md-6">
+                <div>
+                    <label>Durum<i class="fa fa-check"></i></label>
+                    <strong>{{ticket.ticketStateName}}</strong>
+                </div>
+                <hr>
+                <div>
+                    <label>Öncelik<i class="fa fa-exclamation-triangle"></i></label>
+                    <strong>{{ticket.priorityName}}</strong>
+                </div>
+                <hr>
+                <div>
+                    <label>Kayıt Tarihi <i class="fa fa-calendar"></i></label>
+                    <strong>{{ticket.recordDate | displayDate}}</strong>
+                </div>
+                <hr>
+                <div>
+                    <label>Kaptılma Tarihi <i class="fa fa-calendar"></i></label>
+                    <strong>{{ticket.closedDate | displayDate}}</strong>
+                </div>
+                <hr>
+                <div>
+                    <label>İlk Cevap Tarihi <i class="fa fa-calendar"></i></label>
+                    <strong>{{ticket.firstResponseTime | displayDate}}</strong>
+                </div>
+                <!-- <p>Kayıt Tarihi: {{ticket.recordDate | displayDate}}</p>
+
+                <p>Kaptılma Tarihi: {{ticket.closedDate | displayDate}}</p>
+                
+                <p>İlk Cevap Süresi: {{ticket.firstResponseTime | displayDate}}</p>
+                
+                <p>Durum: {{ticket.ticketStateName}}</p>
+                
+                <p>Öncelik: {{ticket.priorityName}}</p> -->
+            </div>
+            <hr>
+            <div class="col-md-12">
+                <h2 style="text-align: center;">Departman Üyeleri</h2>
+                <div class="d-flex justify-content-center">
+                    <div *ngFor="let user of ticket.teamMemberDtos" class="member-item mx-2">
+                        <strong class="ms-1">{{user.name}} </strong>
+                            <i class="fa fa-user"></i>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <!-- <p>Kaptılma Tarihi: {{ticket.closedDate}}</p>
+        <p>İlk Cevap Süresi: {{ticket.firstResponseTime}}</p>
+        <p>Konu: {{ticket.subject}}</p>
+        <p>Açıklama: {{ticket.description}}</p>
+        <p>Ürün: {{ticket.productName}}</p>
+        <p>Departman: {{ticket.teamName}}</p>
+        <p *ngFor="let teamMember of ticket.teamMemberDtos">Departman Üyesi: {{teamMember.name}}</p>
+        <p>Öncelik: {{ticket.priorityName}}</p>
+        <p>Müşteri: {{ticket.customerName}}</p>
+        <p>Tip: {{ticket.ticketTypeName}}</p>
+        <p>Durum: {{ticket.ticketStateName}}</p> -->
+        <div *ngIf="ticket.description" class="table-container">
+            <h2 style="text-align: center;">Açıklama</h2>
+            <hr>
+            <div [innerHTML]="ticket.description"></div>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="row inner-add-2">
+    <div class="col-md-12">
+        <h2 style="text-align: center;">Eklenen Dosyalar</h2>
+        <hr>
+        <app-file-display [forTicketId]="ticketId"></app-file-display>
+    </div>
+    <!-- if you want to be able to add a file to an existing ticket -->
+    <div class="col-md-12">
+        <app-file-input [forTicketId]="ticketId"></app-file-input>
+    </div>
+</div>
+<hr>
+<div class="row inner-add-3">
+    <div class="col-md-12">
+        <h2 style="text-align: center;">Mesajlar</h2>
+        <button class="btn btn-primary mb-2" routerLink="/ticketNode/add" [queryParams]="{ticketId: ticketId}">Mesaj Ekle</button>
+        <div *ngFor="let ticketNode of ticketNodes" class="table-container">
+            <!-- <p>Kullanıcı: {{ticketNode.recordUserName}}</p>
+            <p>Tarih: {{ticketNode.recordDate}}</p> -->
+            <div class="d-flex justify-content-between">
+                <div class="d-flex justify-content-between">
+                    <label><i class="fa fa-calendar"></i> Tarih: </label>
+                    <strong>{{ticketNode.recordDate | displayDate}}</strong>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <label><i class="fa fa-user"></i> Kullanıcı: </label>
+                    <strong>{{ticketNode.recordUserName}}</strong>
+                </div>
+                <button class="btn btn-sm btn-danger" (click)="deleteTicketNode(ticketNode.id)">Sil</button>
+            </div>
+            <hr>
+            <div>
+                <div [innerHTML]="ticketNode.node"></div>
+            </div>
+            
+            <app-file-display [forTicketNodeId]="ticketNode.id"></app-file-display>
+        </div>
+    </div>
+</div>
+<button routerLink="/ticket" class="btn btn-primary mt-2">Listeye Dön</button>
+
+<!-- export interface TicketNode {
+    id: number;
+    rowGuid: string;
+    node: string;
+    recordUserId: number;
+    recordUserName: string;
+    ticketId: number;
+    recordDate: Date;
+    isDeleted: boolean;
+} -->
+

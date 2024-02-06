@@ -1,0 +1,2883 @@
+{
+    "extension": "linecount",
+    "version": "0.1.7",
+    "workspace": "c:\\projects\\Merlin Support App Local",
+    "linecount": [
+        {
+            "version": "0.1.7",
+            "counttime": "2024-01-23 23:39:39",
+            "filesum": 457,
+            "codesum": 164357,
+            "commentsum": 15942,
+            "blanksum": 2121,
+            "filelist": [
+                {
+                    "blank": 3,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "API\\API.csproj"
+                },
+                {
+                    "blank": 2,
+                    "code": 4,
+                    "comment": 1,
+                    "filename": "API\\API.http"
+                },
+                {
+                    "blank": 0,
+                    "code": 25,
+                    "comment": 0,
+                    "filename": "API\\API.sln"
+                },
+                {
+                    "blank": 0,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "API\\appsettings.Development.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 13,
+                    "comment": 0,
+                    "filename": "API\\appsettings.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 1493,
+                    "comment": 0,
+                    "filename": "API\\bin\\Debug\\net8.0\\API.deps.json"
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\API.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\API.exe",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\API.pdb",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 21,
+                    "comment": 0,
+                    "filename": "API\\bin\\Debug\\net8.0\\API.runtimeconfig.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "API\\bin\\Debug\\net8.0\\appsettings.Development.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 13,
+                    "comment": 0,
+                    "filename": "API\\bin\\Debug\\net8.0\\appsettings.json"
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\AutoMapper.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\AutoMapper.Extensions.Microsoft.DependencyInjection.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\Azure.Core.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\Azure.Identity.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\cs\\Microsoft.CodeAnalysis.CSharp.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\cs\\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\cs\\Microsoft.CodeAnalysis.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\cs\\Microsoft.CodeAnalysis.Workspaces.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 1,
+                    "code": 236,
+                    "comment": 0,
+                    "filename": "API\\bin\\Debug\\net8.0\\CustomerCustomData.json"
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\de\\Microsoft.CodeAnalysis.CSharp.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\de\\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\de\\Microsoft.CodeAnalysis.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\de\\Microsoft.CodeAnalysis.Workspaces.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\es\\Microsoft.CodeAnalysis.CSharp.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\es\\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\es\\Microsoft.CodeAnalysis.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\es\\Microsoft.CodeAnalysis.Workspaces.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\fr\\Microsoft.CodeAnalysis.CSharp.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\fr\\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\fr\\Microsoft.CodeAnalysis.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\fr\\Microsoft.CodeAnalysis.Workspaces.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\Humanizer.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\it\\Microsoft.CodeAnalysis.CSharp.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\it\\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\it\\Microsoft.CodeAnalysis.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\it\\Microsoft.CodeAnalysis.Workspaces.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\ja\\Microsoft.CodeAnalysis.CSharp.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\ja\\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\ja\\Microsoft.CodeAnalysis.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\ja\\Microsoft.CodeAnalysis.Workspaces.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\ko\\Microsoft.CodeAnalysis.CSharp.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\ko\\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\ko\\Microsoft.CodeAnalysis.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\ko\\Microsoft.CodeAnalysis.Workspaces.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\Microsoft.AspNetCore.Authentication.JwtBearer.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\Microsoft.AspNetCore.OpenApi.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\Microsoft.Bcl.AsyncInterfaces.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\Microsoft.CodeAnalysis.CSharp.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\Microsoft.CodeAnalysis.CSharp.Workspaces.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\Microsoft.CodeAnalysis.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\Microsoft.CodeAnalysis.Workspaces.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\Microsoft.Data.SqlClient.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\Microsoft.EntityFrameworkCore.Abstractions.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\Microsoft.EntityFrameworkCore.Design.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\Microsoft.EntityFrameworkCore.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\Microsoft.EntityFrameworkCore.Relational.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\Microsoft.EntityFrameworkCore.SqlServer.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\Microsoft.Extensions.DependencyModel.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\Microsoft.Identity.Client.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\Microsoft.Identity.Client.Extensions.Msal.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\Microsoft.IdentityModel.Abstractions.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\Microsoft.IdentityModel.JsonWebTokens.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\Microsoft.IdentityModel.Logging.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\Microsoft.IdentityModel.Protocols.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\Microsoft.IdentityModel.Tokens.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\Microsoft.OpenApi.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\Microsoft.SqlServer.Server.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\Microsoft.Win32.SystemEvents.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\Mono.TextTemplating.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\pl\\Microsoft.CodeAnalysis.CSharp.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\pl\\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\pl\\Microsoft.CodeAnalysis.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\pl\\Microsoft.CodeAnalysis.Workspaces.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\pt-BR\\Microsoft.CodeAnalysis.CSharp.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\pt-BR\\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\pt-BR\\Microsoft.CodeAnalysis.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\pt-BR\\Microsoft.CodeAnalysis.Workspaces.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\ru\\Microsoft.CodeAnalysis.CSharp.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\ru\\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\ru\\Microsoft.CodeAnalysis.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\ru\\Microsoft.CodeAnalysis.Workspaces.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\runtimes\\unix\\lib\\net6.0\\Microsoft.Data.SqlClient.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\runtimes\\unix\\lib\\net6.0\\System.Drawing.Common.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\runtimes\\win-arm64\\native\\Microsoft.Data.SqlClient.SNI.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\runtimes\\win-arm\\native\\Microsoft.Data.SqlClient.SNI.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\runtimes\\win-x64\\native\\Microsoft.Data.SqlClient.SNI.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\runtimes\\win-x86\\native\\Microsoft.Data.SqlClient.SNI.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\runtimes\\win\\lib\\net6.0\\Microsoft.Data.SqlClient.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\runtimes\\win\\lib\\net6.0\\Microsoft.Win32.SystemEvents.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\runtimes\\win\\lib\\net6.0\\System.Drawing.Common.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\runtimes\\win\\lib\\net6.0\\System.Runtime.Caching.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\runtimes\\win\\lib\\net6.0\\System.Security.Cryptography.ProtectedData.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\runtimes\\win\\lib\\net6.0\\System.Windows.Extensions.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\Swashbuckle.AspNetCore.Swagger.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\Swashbuckle.AspNetCore.SwaggerGen.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\Swashbuckle.AspNetCore.SwaggerUI.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\System.CodeDom.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\System.Composition.AttributedModel.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\System.Composition.Convention.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\System.Composition.Hosting.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\System.Composition.Runtime.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\System.Composition.TypedParts.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\System.Configuration.ConfigurationManager.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\System.Drawing.Common.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\System.IdentityModel.Tokens.Jwt.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\System.Memory.Data.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\System.Runtime.Caching.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\System.Security.Cryptography.ProtectedData.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\System.Security.Permissions.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\System.Windows.Extensions.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\tr\\Microsoft.CodeAnalysis.CSharp.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\tr\\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\tr\\Microsoft.CodeAnalysis.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\tr\\Microsoft.CodeAnalysis.Workspaces.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\zh-Hans\\Microsoft.CodeAnalysis.CSharp.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\zh-Hans\\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\zh-Hans\\Microsoft.CodeAnalysis.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\zh-Hans\\Microsoft.CodeAnalysis.Workspaces.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\zh-Hant\\Microsoft.CodeAnalysis.CSharp.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\zh-Hant\\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\zh-Hant\\Microsoft.CodeAnalysis.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\bin\\Debug\\net8.0\\zh-Hant\\Microsoft.CodeAnalysis.Workspaces.resources.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 5,
+                    "code": 31,
+                    "comment": 1,
+                    "filename": "API\\Controllers\\AccountController.cs"
+                },
+                {
+                    "blank": 2,
+                    "code": 13,
+                    "comment": 0,
+                    "filename": "API\\Controllers\\BaseController.cs"
+                },
+                {
+                    "blank": 10,
+                    "code": 60,
+                    "comment": 0,
+                    "filename": "API\\Controllers\\CustomerController.cs"
+                },
+                {
+                    "blank": 12,
+                    "code": 62,
+                    "comment": 0,
+                    "filename": "API\\Controllers\\ProductController.cs"
+                },
+                {
+                    "blank": 6,
+                    "code": 40,
+                    "comment": 0,
+                    "filename": "API\\Controllers\\TeamController.cs"
+                },
+                {
+                    "blank": 4,
+                    "code": 28,
+                    "comment": 0,
+                    "filename": "API\\Controllers\\TestController.cs"
+                },
+                {
+                    "blank": 11,
+                    "code": 60,
+                    "comment": 0,
+                    "filename": "API\\Controllers\\TicketController.cs"
+                },
+                {
+                    "blank": 11,
+                    "code": 52,
+                    "comment": 0,
+                    "filename": "API\\Controllers\\UserController.cs"
+                },
+                {
+                    "blank": 1,
+                    "code": 236,
+                    "comment": 0,
+                    "filename": "API\\CustomerCustomData.json"
+                },
+                {
+                    "blank": 5,
+                    "code": 39,
+                    "comment": 0,
+                    "filename": "API\\Data\\CustomerRepository.cs"
+                },
+                {
+                    "blank": 4,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "API\\Data\\DataContext.cs"
+                },
+                {
+                    "blank": 9,
+                    "code": 56,
+                    "comment": 2,
+                    "filename": "API\\Data\\ProductRepository.cs"
+                },
+                {
+                    "blank": 53,
+                    "code": 215,
+                    "comment": 62,
+                    "filename": "API\\Data\\SeedData.cs"
+                },
+                {
+                    "blank": 11,
+                    "code": 54,
+                    "comment": 2,
+                    "filename": "API\\Data\\TeamRepository.cs"
+                },
+                {
+                    "blank": 6,
+                    "code": 34,
+                    "comment": 0,
+                    "filename": "API\\Data\\TestEntityRepository.cs"
+                },
+                {
+                    "blank": 10,
+                    "code": 56,
+                    "comment": 2,
+                    "filename": "API\\Data\\TicketRepository.cs"
+                },
+                {
+                    "blank": 3,
+                    "code": 28,
+                    "comment": 0,
+                    "filename": "API\\Data\\UnitOfWork.cs"
+                },
+                {
+                    "blank": 5,
+                    "code": 37,
+                    "comment": 0,
+                    "filename": "API\\Data\\UserRepository.cs"
+                },
+                {
+                    "blank": 0,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "API\\Dtos\\CustomerDto.cs"
+                },
+                {
+                    "blank": 0,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "API\\Dtos\\CustomerProductListDto.cs"
+                },
+                {
+                    "blank": 3,
+                    "code": 12,
+                    "comment": 11,
+                    "filename": "API\\Dtos\\PriorityDto.cs"
+                },
+                {
+                    "blank": 0,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "API\\Dtos\\Product.Dto.cs"
+                },
+                {
+                    "blank": 1,
+                    "code": 17,
+                    "comment": 1,
+                    "filename": "API\\Dtos\\TeamDto.cs"
+                },
+                {
+                    "blank": 0,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "API\\Dtos\\TestEntityDto.cs"
+                },
+                {
+                    "blank": 0,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "API\\Dtos\\TicketTypeDto.cs"
+                },
+                {
+                    "blank": 0,
+                    "code": 14,
+                    "comment": 2,
+                    "filename": "API\\Dtos\\UserDto.cs"
+                },
+                {
+                    "blank": 4,
+                    "code": 22,
+                    "comment": 0,
+                    "filename": "API\\Entities\\Customer.cs"
+                },
+                {
+                    "blank": 0,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "API\\Entities\\CustomerProductList.cs"
+                },
+                {
+                    "blank": 3,
+                    "code": 13,
+                    "comment": 0,
+                    "filename": "API\\Entities\\Priority.cs"
+                },
+                {
+                    "blank": 1,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "API\\Entities\\Product.cs"
+                },
+                {
+                    "blank": 1,
+                    "code": 16,
+                    "comment": 1,
+                    "filename": "API\\Entities\\Team.cs"
+                },
+                {
+                    "blank": 1,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "API\\Entities\\TestEntity.cs"
+                },
+                {
+                    "blank": 1,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "API\\Entities\\TicketType.cs"
+                },
+                {
+                    "blank": 0,
+                    "code": 13,
+                    "comment": 2,
+                    "filename": "API\\Entities\\User.cs"
+                },
+                {
+                    "blank": 0,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "API\\enums\\TimeType.cs"
+                },
+                {
+                    "blank": 48,
+                    "code": 118,
+                    "comment": 15,
+                    "filename": "API\\enums\\UserPermissions.cs"
+                },
+                {
+                    "blank": 0,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "API\\Errors\\ApiException.cs"
+                },
+                {
+                    "blank": 2,
+                    "code": 31,
+                    "comment": 8,
+                    "filename": "API\\Extensions\\ApplicationServiceExtensions.cs"
+                },
+                {
+                    "blank": 10,
+                    "code": 31,
+                    "comment": 2,
+                    "filename": "API\\Helpers\\AutoMapperProfiles.cs"
+                },
+                {
+                    "blank": 4,
+                    "code": 43,
+                    "comment": 0,
+                    "filename": "API\\Middleware\\ExceptionMiddleware.cs"
+                },
+                {
+                    "blank": 17,
+                    "code": 154,
+                    "comment": 3,
+                    "filename": "API\\Migrations\\20240119102820_InitialCreate.cs"
+                },
+                {
+                    "blank": 70,
+                    "code": 168,
+                    "comment": 2,
+                    "filename": "API\\Migrations\\20240119102820_InitialCreate.Designer.cs"
+                },
+                {
+                    "blank": 5,
+                    "code": 14,
+                    "comment": 3,
+                    "filename": "API\\Migrations\\20240121001029_permission.cs"
+                },
+                {
+                    "blank": 70,
+                    "code": 168,
+                    "comment": 2,
+                    "filename": "API\\Migrations\\20240121001029_permission.Designer.cs"
+                },
+                {
+                    "blank": 3,
+                    "code": 22,
+                    "comment": 3,
+                    "filename": "API\\Migrations\\20240122075641_row.cs"
+                },
+                {
+                    "blank": 70,
+                    "code": 168,
+                    "comment": 2,
+                    "filename": "API\\Migrations\\20240122075641_row.Designer.cs"
+                },
+                {
+                    "blank": 70,
+                    "code": 166,
+                    "comment": 1,
+                    "filename": "API\\Migrations\\DataContextModelSnapshot.cs"
+                },
+                {
+                    "blank": 0,
+                    "code": 28,
+                    "comment": 0,
+                    "filename": "API\\obj\\API.csproj.EntityFrameworkCore.targets"
+                },
+                {
+                    "blank": 4,
+                    "code": 94,
+                    "comment": 0,
+                    "filename": "API\\obj\\API.csproj.nuget.dgspec.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 13,
+                    "comment": 0,
+                    "filename": "API\\obj\\API.csproj.nuget.g.props"
+                },
+                {
+                    "blank": 0,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "API\\obj\\API.csproj.nuget.g.targets"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 1,
+                    "filename": "API\\obj\\Debug\\net8.0\\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs"
+                },
+                {
+                    "blank": 4,
+                    "code": 9,
+                    "comment": 9,
+                    "filename": "API\\obj\\Debug\\net8.0\\API.AssemblyInfo.cs"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "API\\obj\\Debug\\net8.0\\API.AssemblyInfoInputs.cache"
+                },
+                {
+                    "filename": "API\\obj\\Debug\\net8.0\\API.assets.cache",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\obj\\Debug\\net8.0\\API.csproj.AssemblyReference.cache",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "API\\obj\\Debug\\net8.0\\API.csproj.CopyComplete"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "API\\obj\\Debug\\net8.0\\API.csproj.CoreCompileInputs.cache"
+                },
+                {
+                    "blank": 0,
+                    "code": 141,
+                    "comment": 0,
+                    "filename": "API\\obj\\Debug\\net8.0\\API.csproj.FileListAbsolute.txt"
+                },
+                {
+                    "filename": "API\\obj\\Debug\\net8.0\\API.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 19,
+                    "comment": 0,
+                    "filename": "API\\obj\\Debug\\net8.0\\API.GeneratedMSBuildEditorConfig.editorconfig"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "API\\obj\\Debug\\net8.0\\API.genruntimeconfig.cache"
+                },
+                {
+                    "blank": 0,
+                    "code": 16,
+                    "comment": 1,
+                    "filename": "API\\obj\\Debug\\net8.0\\API.GlobalUsings.g.cs"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "API\\obj\\Debug\\net8.0\\API.MvcApplicationPartsAssemblyInfo.cache"
+                },
+                {
+                    "blank": 4,
+                    "code": 4,
+                    "comment": 9,
+                    "filename": "API\\obj\\Debug\\net8.0\\API.MvcApplicationPartsAssemblyInfo.cs"
+                },
+                {
+                    "filename": "API\\obj\\Debug\\net8.0\\API.pdb",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\obj\\Debug\\net8.0\\apphost.exe",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\obj\\Debug\\net8.0\\ref\\API.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "API\\obj\\Debug\\net8.0\\refint\\API.dll",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "API\\obj\\Debug\\net8.0\\staticwebassets.build.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "API\\obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.API.props"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "API\\obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.API.props"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "API\\obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.API.props"
+                },
+                {
+                    "blank": 89,
+                    "code": 4306,
+                    "comment": 0,
+                    "filename": "API\\obj\\project.assets.json"
+                },
+                {
+                    "blank": 1,
+                    "code": 88,
+                    "comment": 0,
+                    "filename": "API\\obj\\project.nuget.cache"
+                },
+                {
+                    "blank": 14,
+                    "code": 59,
+                    "comment": 2,
+                    "filename": "API\\Program.cs"
+                },
+                {
+                    "blank": 0,
+                    "code": 31,
+                    "comment": 0,
+                    "filename": "API\\Properties\\launchSettings.json"
+                },
+                {
+                    "blank": 9,
+                    "code": 41,
+                    "comment": 9,
+                    "filename": "API\\services\\TokenService.cs"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\Client\\.tsbuildinfo"
+                },
+                {
+                    "blank": 0,
+                    "code": 204,
+                    "comment": 1,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps\\@angular_common.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps\\@angular_common.js.map"
+                },
+                {
+                    "blank": 0,
+                    "code": 80,
+                    "comment": 1,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps\\@angular_common_http.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps\\@angular_common_http.js.map"
+                },
+                {
+                    "blank": 0,
+                    "code": 869,
+                    "comment": 1,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps\\@angular_core.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps\\@angular_core.js.map"
+                },
+                {
+                    "blank": 0,
+                    "code": 119,
+                    "comment": 1,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps\\@angular_forms.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps\\@angular_forms.js.map"
+                },
+                {
+                    "blank": 0,
+                    "code": 81,
+                    "comment": 1,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps\\@angular_platform-browser.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps\\@angular_platform-browser.js.map"
+                },
+                {
+                    "blank": 1,
+                    "code": 114,
+                    "comment": 1,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps\\@angular_platform-browser_animations.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps\\@angular_platform-browser_animations.js.map"
+                },
+                {
+                    "blank": 2,
+                    "code": 5137,
+                    "comment": 401,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps\\@angular_router.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps\\@angular_router.js.map"
+                },
+                {
+                    "blank": 0,
+                    "code": 104,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps\\_metadata.json"
+                },
+                {
+                    "blank": 19,
+                    "code": 4346,
+                    "comment": 1813,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps\\chunk-6GZAXBPQ.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps\\chunk-6GZAXBPQ.js.map"
+                },
+                {
+                    "blank": 7,
+                    "code": 1740,
+                    "comment": 203,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps\\chunk-HVYSHLPY.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps\\chunk-HVYSHLPY.js.map"
+                },
+                {
+                    "blank": 2,
+                    "code": 450,
+                    "comment": 14,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps\\chunk-JZXMLVTC.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps\\chunk-JZXMLVTC.js.map"
+                },
+                {
+                    "blank": 3,
+                    "code": 1050,
+                    "comment": 701,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps\\chunk-N43CMXFF.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps\\chunk-N43CMXFF.js.map"
+                },
+                {
+                    "blank": 11,
+                    "code": 16440,
+                    "comment": 1080,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps\\chunk-T3JHKZ27.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps\\chunk-T3JHKZ27.js.map"
+                },
+                {
+                    "blank": 223,
+                    "code": 5204,
+                    "comment": 223,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps\\chunk-VAETSWNN.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps\\chunk-VAETSWNN.js.map"
+                },
+                {
+                    "blank": 4,
+                    "code": 1390,
+                    "comment": 39,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps\\chunk-XSKVBYEL.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps\\chunk-XSKVBYEL.js.map"
+                },
+                {
+                    "blank": 2,
+                    "code": 4393,
+                    "comment": 362,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps\\chunk-ZXXNFCRB.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps\\chunk-ZXXNFCRB.js.map"
+                },
+                {
+                    "blank": 1,
+                    "code": 333,
+                    "comment": 1,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps\\ngx-bootstrap_datepicker.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps\\ngx-bootstrap_datepicker.js.map"
+                },
+                {
+                    "blank": 1,
+                    "code": 728,
+                    "comment": 37,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps\\ngx-bootstrap_dropdown.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps\\ngx-bootstrap_dropdown.js.map"
+                },
+                {
+                    "blank": 2,
+                    "code": 1521,
+                    "comment": 183,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps\\ngx-bootstrap_modal.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps\\ngx-bootstrap_modal.js.map"
+                },
+                {
+                    "blank": 1,
+                    "code": 1410,
+                    "comment": 123,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps\\ngx-toastr.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps\\ngx-toastr.js.map"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps\\package.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 350,
+                    "comment": 1,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps\\rxjs.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps\\rxjs.js.map"
+                },
+                {
+                    "blank": 0,
+                    "code": 204,
+                    "comment": 1,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_b8eb531d\\@angular_common.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_b8eb531d\\@angular_common.js.map"
+                },
+                {
+                    "blank": 0,
+                    "code": 80,
+                    "comment": 1,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_b8eb531d\\@angular_common_http.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_b8eb531d\\@angular_common_http.js.map"
+                },
+                {
+                    "blank": 0,
+                    "code": 869,
+                    "comment": 1,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_b8eb531d\\@angular_core.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_b8eb531d\\@angular_core.js.map"
+                },
+                {
+                    "blank": 0,
+                    "code": 119,
+                    "comment": 1,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_b8eb531d\\@angular_forms.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_b8eb531d\\@angular_forms.js.map"
+                },
+                {
+                    "blank": 0,
+                    "code": 81,
+                    "comment": 1,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_b8eb531d\\@angular_platform-browser.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_b8eb531d\\@angular_platform-browser.js.map"
+                },
+                {
+                    "blank": 1,
+                    "code": 114,
+                    "comment": 1,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_b8eb531d\\@angular_platform-browser_animations.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_b8eb531d\\@angular_platform-browser_animations.js.map"
+                },
+                {
+                    "blank": 2,
+                    "code": 5137,
+                    "comment": 401,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_b8eb531d\\@angular_router.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_b8eb531d\\@angular_router.js.map"
+                },
+                {
+                    "blank": 19,
+                    "code": 4346,
+                    "comment": 1813,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_b8eb531d\\chunk-6GZAXBPQ.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_b8eb531d\\chunk-6GZAXBPQ.js.map"
+                },
+                {
+                    "blank": 7,
+                    "code": 1740,
+                    "comment": 203,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_b8eb531d\\chunk-HVYSHLPY.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_b8eb531d\\chunk-HVYSHLPY.js.map"
+                },
+                {
+                    "blank": 2,
+                    "code": 450,
+                    "comment": 14,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_b8eb531d\\chunk-JZXMLVTC.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_b8eb531d\\chunk-JZXMLVTC.js.map"
+                },
+                {
+                    "blank": 3,
+                    "code": 1050,
+                    "comment": 701,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_b8eb531d\\chunk-N43CMXFF.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_b8eb531d\\chunk-N43CMXFF.js.map"
+                },
+                {
+                    "blank": 11,
+                    "code": 16440,
+                    "comment": 1080,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_b8eb531d\\chunk-T3JHKZ27.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_b8eb531d\\chunk-T3JHKZ27.js.map"
+                },
+                {
+                    "blank": 223,
+                    "code": 5204,
+                    "comment": 223,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_b8eb531d\\chunk-VAETSWNN.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_b8eb531d\\chunk-VAETSWNN.js.map"
+                },
+                {
+                    "blank": 4,
+                    "code": 1390,
+                    "comment": 39,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_b8eb531d\\chunk-XSKVBYEL.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_b8eb531d\\chunk-XSKVBYEL.js.map"
+                },
+                {
+                    "blank": 2,
+                    "code": 4393,
+                    "comment": 362,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_b8eb531d\\chunk-ZXXNFCRB.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_b8eb531d\\chunk-ZXXNFCRB.js.map"
+                },
+                {
+                    "blank": 1,
+                    "code": 333,
+                    "comment": 1,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_b8eb531d\\ngx-bootstrap_datepicker.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_b8eb531d\\ngx-bootstrap_datepicker.js.map"
+                },
+                {
+                    "blank": 1,
+                    "code": 728,
+                    "comment": 37,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_b8eb531d\\ngx-bootstrap_dropdown.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_b8eb531d\\ngx-bootstrap_dropdown.js.map"
+                },
+                {
+                    "blank": 2,
+                    "code": 1521,
+                    "comment": 183,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_b8eb531d\\ngx-bootstrap_modal.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_b8eb531d\\ngx-bootstrap_modal.js.map"
+                },
+                {
+                    "blank": 1,
+                    "code": 1410,
+                    "comment": 123,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_b8eb531d\\ngx-toastr.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_b8eb531d\\ngx-toastr.js.map"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_b8eb531d\\package.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 350,
+                    "comment": 1,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_b8eb531d\\rxjs.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_b8eb531d\\rxjs.js.map"
+                },
+                {
+                    "blank": 0,
+                    "code": 204,
+                    "comment": 1,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_bc93cf81\\@angular_common.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_bc93cf81\\@angular_common.js.map"
+                },
+                {
+                    "blank": 0,
+                    "code": 80,
+                    "comment": 1,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_bc93cf81\\@angular_common_http.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_bc93cf81\\@angular_common_http.js.map"
+                },
+                {
+                    "blank": 0,
+                    "code": 869,
+                    "comment": 1,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_bc93cf81\\@angular_core.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_bc93cf81\\@angular_core.js.map"
+                },
+                {
+                    "blank": 0,
+                    "code": 119,
+                    "comment": 1,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_bc93cf81\\@angular_forms.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_bc93cf81\\@angular_forms.js.map"
+                },
+                {
+                    "blank": 0,
+                    "code": 81,
+                    "comment": 1,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_bc93cf81\\@angular_platform-browser.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_bc93cf81\\@angular_platform-browser.js.map"
+                },
+                {
+                    "blank": 1,
+                    "code": 114,
+                    "comment": 1,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_bc93cf81\\@angular_platform-browser_animations.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_bc93cf81\\@angular_platform-browser_animations.js.map"
+                },
+                {
+                    "blank": 2,
+                    "code": 5137,
+                    "comment": 401,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_bc93cf81\\@angular_router.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_bc93cf81\\@angular_router.js.map"
+                },
+                {
+                    "blank": 19,
+                    "code": 4346,
+                    "comment": 1813,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_bc93cf81\\chunk-6GZAXBPQ.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_bc93cf81\\chunk-6GZAXBPQ.js.map"
+                },
+                {
+                    "blank": 7,
+                    "code": 1740,
+                    "comment": 203,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_bc93cf81\\chunk-HVYSHLPY.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_bc93cf81\\chunk-HVYSHLPY.js.map"
+                },
+                {
+                    "blank": 2,
+                    "code": 450,
+                    "comment": 14,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_bc93cf81\\chunk-JZXMLVTC.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_bc93cf81\\chunk-JZXMLVTC.js.map"
+                },
+                {
+                    "blank": 3,
+                    "code": 1050,
+                    "comment": 701,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_bc93cf81\\chunk-N43CMXFF.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_bc93cf81\\chunk-N43CMXFF.js.map"
+                },
+                {
+                    "blank": 11,
+                    "code": 16440,
+                    "comment": 1080,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_bc93cf81\\chunk-T3JHKZ27.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_bc93cf81\\chunk-T3JHKZ27.js.map"
+                },
+                {
+                    "blank": 223,
+                    "code": 5204,
+                    "comment": 223,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_bc93cf81\\chunk-VAETSWNN.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_bc93cf81\\chunk-VAETSWNN.js.map"
+                },
+                {
+                    "blank": 4,
+                    "code": 1390,
+                    "comment": 39,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_bc93cf81\\chunk-XSKVBYEL.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_bc93cf81\\chunk-XSKVBYEL.js.map"
+                },
+                {
+                    "blank": 2,
+                    "code": 4393,
+                    "comment": 362,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_bc93cf81\\chunk-ZXXNFCRB.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_bc93cf81\\chunk-ZXXNFCRB.js.map"
+                },
+                {
+                    "blank": 1,
+                    "code": 333,
+                    "comment": 1,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_bc93cf81\\ngx-bootstrap_datepicker.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_bc93cf81\\ngx-bootstrap_datepicker.js.map"
+                },
+                {
+                    "blank": 1,
+                    "code": 728,
+                    "comment": 37,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_bc93cf81\\ngx-bootstrap_dropdown.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_bc93cf81\\ngx-bootstrap_dropdown.js.map"
+                },
+                {
+                    "blank": 2,
+                    "code": 1521,
+                    "comment": 183,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_bc93cf81\\ngx-bootstrap_modal.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_bc93cf81\\ngx-bootstrap_modal.js.map"
+                },
+                {
+                    "blank": 1,
+                    "code": 1410,
+                    "comment": 123,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_bc93cf81\\ngx-toastr.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_bc93cf81\\ngx-toastr.js.map"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_bc93cf81\\package.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 350,
+                    "comment": 1,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_bc93cf81\\rxjs.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\.angular\\cache\\17.0.9\\vite\\deps_temp_bc93cf81\\rxjs.js.map"
+                },
+                {
+                    "blank": 3,
+                    "code": 13,
+                    "comment": 1,
+                    "filename": "Client\\.editorconfig"
+                },
+                {
+                    "blank": 4,
+                    "code": 20,
+                    "comment": 20,
+                    "filename": "Client\\.gitignore"
+                },
+                {
+                    "blank": 6,
+                    "code": 103,
+                    "comment": 0,
+                    "filename": "Client\\angular.json"
+                },
+                {
+                    "blank": 32,
+                    "code": 160,
+                    "comment": 1,
+                    "filename": "Client\\dist\\client\\3rdpartylicenses.txt"
+                },
+                {
+                    "filename": "Client\\dist\\client\\browser\\favicon.ico",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 24,
+                    "code": 152,
+                    "comment": 0,
+                    "filename": "Client\\dist\\client\\browser\\index.html"
+                },
+                {
+                    "blank": 23,
+                    "code": 149,
+                    "comment": 0,
+                    "filename": "Client\\dist\\client\\browser\\main-GLJUXFAP.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 2,
+                    "comment": 0,
+                    "filename": "Client\\dist\\client\\browser\\polyfills-LZBJRJJE.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "Client\\dist\\client\\browser\\styles-5INURTSO.css"
+                },
+                {
+                    "blank": 1,
+                    "code": 4,
+                    "comment": 0,
+                    "filename": "Client\\dist\\client\\prerendered-routes.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "Client\\dist\\client\\server\\chunk-53JWIC36.mjs"
+                },
+                {
+                    "blank": 0,
+                    "code": 2,
+                    "comment": 0,
+                    "filename": "Client\\dist\\client\\server\\chunk-KRLCULJA.mjs"
+                },
+                {
+                    "blank": 23,
+                    "code": 143,
+                    "comment": 0,
+                    "filename": "Client\\dist\\client\\server\\chunk-LMWT664V.mjs"
+                },
+                {
+                    "blank": 5,
+                    "code": 36,
+                    "comment": 1,
+                    "filename": "Client\\dist\\client\\server\\chunk-NIV5Z5IM.mjs"
+                },
+                {
+                    "blank": 0,
+                    "code": 13,
+                    "comment": 0,
+                    "filename": "Client\\dist\\client\\server\\index.server.html"
+                },
+                {
+                    "blank": 0,
+                    "code": 2,
+                    "comment": 0,
+                    "filename": "Client\\dist\\client\\server\\main.server.mjs"
+                },
+                {
+                    "blank": 0,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "Client\\dist\\client\\server\\polyfills.server.mjs"
+                },
+                {
+                    "blank": 0,
+                    "code": 2,
+                    "comment": 0,
+                    "filename": "Client\\dist\\client\\server\\render-utils.server.mjs"
+                },
+                {
+                    "blank": 1,
+                    "code": 56,
+                    "comment": 8,
+                    "filename": "Client\\dist\\client\\server\\server.mjs"
+                },
+                {
+                    "blank": 92,
+                    "code": 13676,
+                    "comment": 0,
+                    "filename": "Client\\package-lock.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 51,
+                    "comment": 0,
+                    "filename": "Client\\package.json"
+                },
+                {
+                    "blank": 13,
+                    "code": 14,
+                    "comment": 4,
+                    "filename": "Client\\README.md"
+                },
+                {
+                    "blank": 15,
+                    "code": 40,
+                    "comment": 9,
+                    "filename": "Client\\server.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 27,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\_models\\customer.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 19,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\_models\\customerProductList.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\_models\\login.ts"
+                },
+                {
+                    "blank": 3,
+                    "code": 24,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\_models\\priority.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\_models\\product.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\_models\\team.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 4,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\_models\\testEntity.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\_models\\ticket.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 22,
+                    "comment": 1,
+                    "filename": "Client\\src\\app\\_models\\user.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\_services\\account.service.spec.ts"
+                },
+                {
+                    "blank": 7,
+                    "code": 33,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\_services\\account.service.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\_services\\customer.service.spec.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\_services\\customer.service.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\_services\\product.service.spec.ts"
+                },
+                {
+                    "blank": 5,
+                    "code": 24,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\_services\\product.service.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\_services\\team.service.spec.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 17,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\_services\\team.service.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\_services\\test.service.spec.ts"
+                },
+                {
+                    "blank": 3,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\_services\\test.service.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\_services\\ticket.service.spec.ts"
+                },
+                {
+                    "blank": 8,
+                    "code": 24,
+                    "comment": 2,
+                    "filename": "Client\\src\\app\\_services\\ticket.service.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\_services\\user.service.spec.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\_services\\user.service.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\app.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 4,
+                    "comment": 1,
+                    "filename": "Client\\src\\app\\app.component.html"
+                },
+                {
+                    "blank": 4,
+                    "code": 25,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\app.component.spec.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 13,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\app.component.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\app.config.server.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\app.config.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 72,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\app.module.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\app.routes.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\customer\\customer.component.css"
+                },
+                {
+                    "blank": 3,
+                    "code": 54,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\customer\\customer.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\customer\\customer.component.spec.ts"
+                },
+                {
+                    "blank": 6,
+                    "code": 24,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\customer\\customer.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\cutomer-add\\customer-add.component.css"
+                },
+                {
+                    "blank": 1,
+                    "code": 48,
+                    "comment": 8,
+                    "filename": "Client\\src\\app\\cutomer-add\\customer-add.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\cutomer-add\\customer-add.component.spec.ts"
+                },
+                {
+                    "blank": 25,
+                    "code": 89,
+                    "comment": 18,
+                    "filename": "Client\\src\\app\\cutomer-add\\customer-add.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\environment.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 13,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\error.interceptor.spec.ts"
+                },
+                {
+                    "blank": 3,
+                    "code": 57,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\error.interceptor.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\home\\home.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\home\\home.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\home\\home.component.spec.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\home\\home.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\nav\\nav.component.css"
+                },
+                {
+                    "blank": 2,
+                    "code": 29,
+                    "comment": 4,
+                    "filename": "Client\\src\\app\\nav\\nav.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\nav\\nav.component.spec.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\nav\\nav.component.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\pipes\\space.pipe.spec.ts"
+                },
+                {
+                    "blank": 3,
+                    "code": 10,
+                    "comment": 1,
+                    "filename": "Client\\src\\app\\pipes\\space.pipe.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\priority-add\\priority-add.component.css"
+                },
+                {
+                    "blank": 4,
+                    "code": 32,
+                    "comment": 27,
+                    "filename": "Client\\src\\app\\priority-add\\priority-add.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\priority-add\\priority-add.component.spec.ts"
+                },
+                {
+                    "blank": 19,
+                    "code": 75,
+                    "comment": 19,
+                    "filename": "Client\\src\\app\\priority-add\\priority-add.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\product\\product.component.css"
+                },
+                {
+                    "blank": 1,
+                    "code": 62,
+                    "comment": 9,
+                    "filename": "Client\\src\\app\\product\\product.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\product\\product.component.spec.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 22,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\product\\product.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\server\\server.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\server\\server.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\server\\server.component.spec.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\server\\server.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 4,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\team-add\\team-add.component.css"
+                },
+                {
+                    "blank": 1,
+                    "code": 34,
+                    "comment": 24,
+                    "filename": "Client\\src\\app\\team-add\\team-add.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\team-add\\team-add.component.spec.ts"
+                },
+                {
+                    "blank": 20,
+                    "code": 79,
+                    "comment": 19,
+                    "filename": "Client\\src\\app\\team-add\\team-add.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\team\\team.component.css"
+                },
+                {
+                    "blank": 5,
+                    "code": 47,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\team\\team.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\team\\team.component.spec.ts"
+                },
+                {
+                    "blank": 9,
+                    "code": 33,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\team\\team.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\test\\test.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\test\\test.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\test\\test.component.spec.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\test\\test.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\text-input\\text-input.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\text-input\\text-input.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\text-input\\text-input.component.spec.ts"
+                },
+                {
+                    "blank": 7,
+                    "code": 26,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\text-input\\text-input.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\ticket-type-add\\ticket-type-add.component.css"
+                },
+                {
+                    "blank": 1,
+                    "code": 20,
+                    "comment": 6,
+                    "filename": "Client\\src\\app\\ticket-type-add\\ticket-type-add.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\ticket-type-add\\ticket-type-add.component.spec.ts"
+                },
+                {
+                    "blank": 12,
+                    "code": 63,
+                    "comment": 6,
+                    "filename": "Client\\src\\app\\ticket-type-add\\ticket-type-add.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\ticket\\ticket.component.css"
+                },
+                {
+                    "blank": 3,
+                    "code": 94,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\ticket\\ticket.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\ticket\\ticket.component.spec.ts"
+                },
+                {
+                    "blank": 11,
+                    "code": 43,
+                    "comment": 2,
+                    "filename": "Client\\src\\app\\ticket\\ticket.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\user-add\\user-add.component.css"
+                },
+                {
+                    "blank": 3,
+                    "code": 43,
+                    "comment": 9,
+                    "filename": "Client\\src\\app\\user-add\\user-add.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\user-add\\user-add.component.spec.ts"
+                },
+                {
+                    "blank": 16,
+                    "code": 82,
+                    "comment": 10,
+                    "filename": "Client\\src\\app\\user-add\\user-add.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\user\\user.component.css"
+                },
+                {
+                    "blank": 3,
+                    "code": 50,
+                    "comment": 8,
+                    "filename": "Client\\src\\app\\user\\user.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\user\\user.component.spec.ts"
+                },
+                {
+                    "blank": 5,
+                    "code": 24,
+                    "comment": 0,
+                    "filename": "Client\\src\\app\\user\\user.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "Client\\src\\assets\\.gitkeep"
+                },
+                {
+                    "filename": "Client\\src\\favicon.ico",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 16,
+                    "comment": 0,
+                    "filename": "Client\\src\\index.html"
+                },
+                {
+                    "blank": 2,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "Client\\src\\main.server.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 4,
+                    "comment": 0,
+                    "filename": "Client\\src\\main.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 6,
+                    "comment": 1,
+                    "filename": "Client\\src\\styles.css"
+                },
+                {
+                    "blank": 3,
+                    "code": 14,
+                    "comment": 1,
+                    "filename": "Client\\tsconfig.app.json"
+                },
+                {
+                    "blank": 1,
+                    "code": 31,
+                    "comment": 1,
+                    "filename": "Client\\tsconfig.json"
+                },
+                {
+                    "blank": 2,
+                    "code": 11,
+                    "comment": 1,
+                    "filename": "Client\\tsconfig.spec.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "package-lock.json"
+                }
+            ]
+        }
+    ]
+}

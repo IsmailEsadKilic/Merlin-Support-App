@@ -1,0 +1,86 @@
+<button routerLink="/team" class="btn btn-primary" *ngIf="teamId > 0 && legacy">Listeye Dön</button>
+<button routerLink="/team" class="btn btn-primary" *ngIf="!legacy">Listeye Dön</button>
+<h1 style="text-align: center;" *ngIf="teamId < 1"> Takım Ekle</h1>
+<h1 style="text-align: center;" *ngIf="teamId > 0"> Takım: {{teamName}}</h1>
+<hr>
+<form *ngIf="teamAddFormInitialised" (ngSubmit)="onSubmit()" autocomplete="off" [formGroup]="teamAddForm">
+    <div>
+        <div class="inner-add-1">
+            <h2 style="text-align: center;">Takım Adı</h2>
+            <app-text-input [formControl]="$any(teamAddForm.controls['teamName'])" [label]="'Takım İsmi'"></app-text-input>
+        </div>
+        <hr>
+        <div *ngIf="advancedMode">
+            <div class="inner-add-2">
+                <h2 style="text-align: center;">Takım Üyeleri</h2>
+                <div class="d-flex inner-add-2">
+                    <div *ngFor="let user of usersToAdd" class="member-item mx-2">
+                        <strong class="ms-1">{{user.userName}}</strong>
+                        <button class="btn" (click)="removeTeamMemberFromAdd(user)">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </div>
+                    <div *ngFor="let user of existingUsers" class="member-item mx-2">
+                        <strong class="ms-1">{{user.userName}}</strong>
+                        <button class="btn" (click)="removeTeamMemberFromExisting(user)">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="inner-add-3">
+                <h2 style="text-align: center;">Kullanıcılar</h2>
+                <!-- users lookup -->
+                <div class="d-flex">
+                    <div *ngFor="let user of usersLookup" class="member-item mx-2">
+                        <strong class="ms-1">{{user.userName}}</strong>
+                        <button class="btn" (click)="addTeamMemberFromLookup(user)">
+                            <i class="fa fa-plus"></i>
+                        </button>
+                    </div>
+                    <div *ngFor="let user of existingUsersLookup" class="member-item mx-2">
+                        <strong class="ms-1">{{user.userName}}</strong>
+                        <button class="btn" (click)="addTeamMemberFromExistingLookup(user)">
+                            <i class="fa fa-plus"></i>
+                        </button>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+    <div class="row" *ngIf="teamAddFormErrors">
+        <ul class="text-danger">
+            <li *ngFor="let error of teamAddFormErrors">{{error}}</li>
+        </ul>
+    </div>
+</form>
+<strong class="me-2"> Müşteriyi: </strong>
+
+<button (click)="trySubmitTeamAddForm()" class="btn btn-success me-2">Kaydet</button>
+<button class="btn btn-warning me-2" type="button" (click)="resetTeamAddForm()">{{(teamId > 0) ? 'Değişiklikleri Geri Al' : 'Temizle'}}</button>
+<button routerLink="/team" class="btn btn-primary" *ngIf="teamId > 0 && legacy">Listeye Dön</button>
+<button routerLink="/team" class="btn btn-primary" *ngIf="!legacy">Listeye Dön</button>
+<!-- // export interface Team {
+    //   id: number;
+    //   rowGuiid: string;
+    //   teamName: string;
+    //   teamMembers: TeamMember[];
+    // }
+    
+    // export interface TeamAdd {
+    //   teamName: string;
+    //   teamMembers: TeamMemberAdd[];
+    
+    // }
+    
+    // export interface TeamMember {
+    //   id: number;
+    //   teamId: number;
+    //   userId: number;
+    // }
+    
+    // export interface TeamMemberAdd {
+    //   teamId: number;
+    //   userId: number;
+    // } -->

@@ -1,0 +1,27 @@
+<button class="btn btn-primary" routerLink="/ticketProperty" *ngIf="ticketTypeId > 0 && legacy">Listeye Dön</button>
+<button class="btn btn-primary" routerLink="/ticketProperty" *ngIf="!legacy">Listeye Dön</button>
+<h1 style="text-align: center;" *ngIf="ticketTypeId < 1"> Ticket Tipi Ekle</h1>
+<h1 style="text-align: center;" *ngIf="ticketTypeId > 0"> Ticket Tipi: {{ticketTypeName}}</h1>
+<form *ngIf="ticketTypeAddFormInitialised" [formGroup]="ticketTypeAddForm" (ngSubmit)="onSubmit()" autocomplete="off">
+    <div class="row">
+        <div class="col-md-6">
+            <label>isim</label>
+            <strong> *</strong>
+            <app-text-input [formControl]="$any(ticketTypeAddForm.controls['name'])" [label]="'Name'"></app-text-input>
+        </div>
+        <div class="col-md-6">
+            <label>ListIndex</label>
+            <app-text-input [formControl]="$any(ticketTypeAddForm.controls['listIndex'])" [label]="'ListIndex'"></app-text-input>
+        </div>
+    </div>
+    <div class="row" *ngIf="ticketTypeAddFormErrors">
+        <ul class="text-danger">
+            <li *ngFor="let error of ticketTypeAddFormErrors">{{error}}</li>
+        </ul>
+    </div>
+</form>
+<strong class="me-2">Ticket Tipini: </strong>
+<button (click)="trySubmitTicketTypeAddForm()" class="btn btn-success me-2">Kaydet</button>
+<button class="btn btn-warning me-2" type="button" (click)="resetTicketTypeAddForm()">{{(ticketTypeId > 0) ? 'Değişiklikleri Geri Al' : 'Temizle'}}</button>
+<button class="btn btn-primary" routerLink="/ticketProperty" *ngIf="ticketTypeId > 0 && legacy">Listeye Dön</button>
+<button class="btn btn-primary" routerLink="/ticketProperty" *ngIf="!legacy">Listeye Dön</button>

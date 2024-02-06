@@ -1,0 +1,26 @@
+<!-- <button (click)="downloadFile(1)">indir</button> -->
+<div *ngIf="fileDownloads.length > 0 || forTicketId > 0" style="margin-top: 20px; margin-bottom: 20px; border: 1px solid #ccc; padding: 10px; border-radius: 5px;">
+    <strong *ngIf="!(fileDownloads.length > 0) && forTicketId > 0">Dosya Bulunamadı</strong>
+    <div *ngFor="let fileDownload of fileDownloads">
+        <i class="fa fa-file-o"></i>
+        Dosya İsmi: <strong>{{fileDownload.orginalFileName}}</strong>
+        Dosya Boyutu: <strong>{{fileDownload.fileSize | filesize}}</strong>
+        Kayıt Tarihi: <strong>{{fileDownload.recordDatetime | displayDate}}</strong>
+        <button class="btn btn-sm btn-success me-1" (click)="downloadFile(fileDownload.id)">indir</button>
+        <button *ngIf="!(forTicketNodeId > 0)" class="btn btn-sm btn-danger" (click)="deleteFile(fileDownload.id)">sil</button>
+        <hr>
+    </div>
+</div>
+
+<!-- export interface UploadFile {
+    id: number;
+    fileName: string;
+    orginalFileName: string;
+    uploadFilePath: string;
+    ticketId: number;
+    fileSize: number;
+    recordDatetime: Date;
+    userId: number;
+    ticketNodeId: number;
+    isMessageFile: boolean;
+    } -->

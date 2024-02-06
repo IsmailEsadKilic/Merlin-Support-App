@@ -1,0 +1,103 @@
+
+<div class="row">
+  <div class="table-container col-md-5 me-1">
+    <h1>Ticket Tipleri</h1>
+    <button *ngIf="legacy" class="btn btn-primary" (click)="showTicketTypeAddModal()">Bilet Tipi Ekle</button>
+    <button routerLink="/ticketProperty/ticketType/add" class="btn btn-primary">Bilet Tipi Ekle</button>
+    <hr>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <!-- <th>Id</th> -->
+                <!-- <th>RowGuiid</th> -->
+                <th>İsim</th>
+                <th>ListIndex</th>
+                <th style="width: 5%;">Düzenle</th>
+                <th style="width: 5%;">Sil</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let ticketType of ticketTypes">
+                <!-- <td>{{ticketType.id}}</td> -->
+                <!-- <td>{{ticketType.rowGuiid}}</td> -->
+                <td>{{ticketType.name}}</td>
+                <td>{{ticketType.listIndex}}</td>
+                <td><button class="btn btn-info" routerLink="/ticketProperty/ticketType/edit" [queryParams]="{id: ticketType.id}"
+                  ><i class="fa fa-gear"></i></button></td>
+                <td><button class="btn btn-danger" (click)="removeTicketType(ticketType);"
+                  ><i class="fa fa-trash"></i></button></td>
+            </tr>
+        </tbody>
+    </table>
+  </div>
+  <div class="table-container col-md-6 ms-1">
+    <h1>Öncelikler</h1>
+    <button *ngIf="legacy" class="btn btn-primary" (click)="showPriorityAddModal()">Öncelik Ekle</button>
+    <button routerLink="/ticketProperty/priority/add" class="btn btn-primary">Öncelik Ekle</button>
+    <hr>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <!-- <th>Id</th> -->
+                <!-- <th>RowGuiid</th> -->
+                <th>Öncelik İsmi</th>
+                <th>Zaman Tipi</th>
+                <th>Zaman</th>
+                <th>ListIndex</th>
+                <th style="width: 5%;">Düzenle</th>
+                <th style="width: 5%;">Sil</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let priority of priorities">
+                <!-- <td>{{priority.id}}</td> -->
+                <!-- <td>{{priority.rowGuiid}}</td> -->
+                <td>{{priority.priorityName}}</td>
+                <td>{{timeTypeDescription(priority.timeType)}}</td>
+                <td>{{priority.time}}</td>
+                <td>{{priority.listIndex}}</td>
+                <td><button class="btn btn-info" routerLink="/ticketProperty/priority/edit" [queryParams]="{id: priority.id}"
+                  ><i class="fa fa-gear"></i></button></td>
+                <td><button class="btn btn-danger" (click)="removePriority(priority);"
+                  ><i class="fa fa-trash"></i></button></td>
+            </tr>
+        </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="modal modal-lg fade" bsModal #ticketTypeAddModal="bs-modal" [config]="{backdrop: 'static'}"
+     tabindex="-1" role="dialog" aria-labelledby="dialog-static-name">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 id="dialog-static-name" class="modal-title pull-left">Bilet Tipi Ekle</h4>
+        <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="hideTicketTypeAddModal();">
+          <span aria-hidden="true" class="visually-hidden">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <app-ticket-type-add *ngIf="ticketTypeAddModalInitialised" (addItemEvent)="ticketTypes.push($event)"></app-ticket-type-add>
+        <button class="btn btn-danger ms-2" (click)="hideTicketTypeAddModal();">İptal</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal modal-lg fade" bsModal #priorityAddModal="bs-modal" [config]="{backdrop: 'static'}"
+     tabindex="-1" role="dialog" aria-labelledby="dialog-static-name">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 id="dialog-static-name" class="modal-title pull-left">Öncelik Ekle</h4>
+        <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="hidePriorityAddModal();">
+          <span aria-hidden="true" class="visually-hidden">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <app-priority-add *ngIf="priorityAddModalInitialised" (addItemEvent)="priorities.push($event)"></app-priority-add>
+        <button class="btn btn-danger ms-2" (click)="hidePriorityAddModal();">İptal</button>
+      </div>
+    </div>
+  </div>
+</div>

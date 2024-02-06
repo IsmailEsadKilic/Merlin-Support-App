@@ -1,0 +1,110 @@
+<button routerLink="/customer" class="btn btn-primary">Listeye Dön</button>
+<h1 style="text-align: center;" *ngIf="customerId < 1"> Müşteri Ekle</h1>
+<h1 style="text-align: center;" *ngIf="customerId > 0"> Müşteri: {{customerName}}</h1>
+<hr>
+<form *ngIf="customerAddFormInitialised" [formGroup]="customerAddForm" (ngSubmit)="onSubmit()" autocomplete="off">
+    <div class="row">
+        <div class="col-md-6">
+            <label>Şirket İsmi</label>
+            <strong> *</strong>
+            <app-text-input [formControl]="$any(customerAddForm.controls['companyName'])" [label]="'Şirket İsmi'"></app-text-input>
+        </div>
+        <div class="col-md-6">
+            <label>Adres Telefon</label>
+            <strong> *</strong>
+            <app-text-input [formControl]="$any(customerAddForm.controls['addressPhone'])" [label]="'Adres Telefon'"></app-text-input>
+        </div>
+        <div class="col-md-6">
+            <label>Fax</label>
+            <strong> *</strong>
+            <app-text-input [formControl]="$any(customerAddForm.controls['fax'])" [label]="'Fax'"></app-text-input>
+        </div>
+        <div class="col-md-6">
+            <label>Vergi Dairesi</label>
+            <strong> *</strong>
+            <app-text-input [formControl]="$any(customerAddForm.controls['taxOffice'])" [label]="'Vergi Dairesi'"></app-text-input>
+        </div>
+        <div class="col-md-6">
+            <label>Vergi Numarası</label>
+            <strong> *</strong>
+            <app-text-input [formControl]="$any(customerAddForm.controls['taxNumber'])" [label]="'Vergi Numarası'"></app-text-input>
+        </div>
+        <div class="col-md-6">
+            <label>Müşteri Email</label>
+            <strong> *</strong>
+            <app-text-input [formControl]="$any(customerAddForm.controls['customerEmail'])" [label]="'Müşteri Email'"></app-text-input>
+        </div>
+        <hr>
+        <h2 style="text-align: center;">Custom</h2>
+        <div *ngFor="let customPropertyDescriptor of customPropertyDescriptors" class="col-md-6">
+            <label>{{customPropertyDescriptor.label}}</label>
+            <strong *ngIf="customPropertyDescriptor.isRequired"> *</strong>
+            <app-text-input [formControl]="$any(customerAddForm.controls[customPropertyDescriptor.identifier])" [label]="customPropertyDescriptor.label"></app-text-input>
+        </div>
+    </div>
+    <div *ngIf="advancedMode">
+        <div class="inner-add-1">
+            <hr>
+            <app-customer-product-list-add *ngIf="customerAddFormInitialised" [forCustomerId]="customerId" (emitWithoutSavingEvent)="customerProductListsToAdd.push($event)"></app-customer-product-list-add>
+        </div>
+
+        <div class="inner-add-2">  
+            <hr>
+            <h2 style="text-align: center;">{{(customerId < 0 ? 'Müşteri İle ' : '')}} {{(customerId < 1) ? 'Eklenecek' : ''}} Lisanslar</h2>
+            
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <!-- <th>Id</th> -->
+                        <!-- <th>ProductId</th> -->
+                        <th>Ürün Adı</th>
+                        <th>Versiyon</th>
+                        <th>Başlangıç Tarihi</th>
+                        <th>Bitiş Tarihi</th>
+                        <!-- <th>CustomerId</th> -->
+                        <th>Açıklama</th>
+                        <th style="width:5%;">Sil</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let customerProductList of customerProductListsToAdd">
+                        <!-- <td>oluşturulmadı</td> -->
+                        <!-- <td>{{customerProductList.productId}}</td> -->
+                        <td>{{customerProductList.productName}}</td>
+                        <td>{{customerProductList.version}}</td>
+                        <td>{{customerProductList.firstDate}}</td>
+                        <td>{{customerProductList.endDate}}</td>
+                        <!-- <td>{{customerProductList.customerId}}</td> -->
+                        <td>{{customerProductList.description}}</td>
+                        <td><button (click)="customerProductListsToAdd.splice(customerProductListsToAdd.indexOf(customerProductList), 1);"
+                            class="btn btn-danger"><i class="fa fa-trash"></i></button></td>
+                    </tr>
+                    <tr *ngFor="let customerProductList of existingCustomerProductLists">
+                        <!-- <td>{{customerProductList.id}}</td> -->
+                        <!-- <td>{{customerProductList.productId}}</td> -->
+                        <td>{{customerProductList.productName}}</td>
+                        <td>{{customerProductList.version}}</td>
+                        <td>{{customerProductList.firstDate | displayDate}}</td>
+                        <td>{{customerProductList.endDate | displayDate}}</td>
+                        <!-- <td>{{customerProductList.customerId}}</td> -->
+                        <td>{{customerProductList.description}}</td>
+                        <td><button (click)="IdsToDel.push(customerProductList.id);
+                            existingCustomerProductLists.splice(existingCustomerProductLists.indexOf(customerProductList), 1);"
+                            class="btn btn-danger"><i class="fa fa-trash"></i></button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <strong style="text-align: center; width: max-content;" *ngIf="customerProductListsToAdd.length + existingCustomerProductLists.length == 0">Boş</strong>
+        </div>
+    </div>
+    <div class="row" *ngIf="customerAddFormErrors">
+        <ul class="text-danger">
+            <li *ngFor="let error of customerAddFormErrors">{{error}}</li>
+        </ul>
+    </div>
+</form>
+<hr>
+<strong class="me-2"> Müşteriyi: </strong>
+<button (click)="trySubmitCustomerAddForm()" class="btn btn-success me-2">Kaydet</button>
+<button class="btn btn-warning me-2" type="button" (click)="resetCustomerAddForm()">{{(customerId > 0) ? 'Değişiklikleri Geri Al' : 'Temizle'}}</button>
+<button routerLink="/customer" class="btn btn-primary">Listeye Dön</button>

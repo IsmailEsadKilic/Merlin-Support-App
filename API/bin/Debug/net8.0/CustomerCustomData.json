@@ -1,0 +1,237 @@
+
+[
+    {
+        "Id": 176,
+        "Label": "Satral Model",
+        "DefaultValue": "",
+        "IsRequired": false
+    },
+    {
+        "Id": 177,
+        "Label": "Software Versiyon",
+        "DefaultValue": "",
+        "IsRequired": false
+    },
+    {
+        "Id": 178,
+        "Label": "CPU ID",
+        "DefaultValue": "",
+        "IsRequired": false
+    },
+    {
+        "Id": 179,
+        "Label": "Pbx IP Adres Main",
+        "DefaultValue": "",
+        "IsRequired": false
+    },
+    {
+        "Id": 180,
+        "Label": "Pbx IP Adres CPU 1",
+        "DefaultValue": "",
+        "IsRequired": false
+    },
+    {
+        "Id": 181,
+        "Label": "Pbx IP Adres CPU 2",
+        "DefaultValue": "",
+        "IsRequired": false
+    },
+    {
+        "Id": 182,
+        "Label": "GD IP Adres 1",
+        "DefaultValue": "",
+        "IsRequired": false
+    },
+    {
+        "Id": 183,
+        "Label": "GD IP Adres 2",
+        "DefaultValue": "",
+        "IsRequired": false
+    },
+    {
+        "Id": 184,
+        "Label": "INTIP IP Adress 1",
+        "DefaultValue": "",
+        "IsRequired": false
+    },
+    {
+        "Id": 185,
+        "Label": "INTIP IP Adress 2",
+        "DefaultValue": "",
+        "IsRequired": false
+    },
+    {
+        "Id": 186,
+        "Label": "Node Number",
+        "DefaultValue": "",
+        "IsRequired": false
+    },
+    {
+        "Id": 187,
+        "Label": "MTCL Password",
+        "DefaultValue": "",
+        "IsRequired": false
+    },
+    {
+        "Id": 188,
+        "Label": "ROOT Password",
+        "DefaultValue": "",
+        "IsRequired": false
+    },
+    {
+        "Id": 189,
+        "Label": "SWINST Password",
+        "DefaultValue": "",
+        "IsRequired": false
+    },
+    {
+        "Id": 190,
+        "Label": "RMA Password",
+        "DefaultValue": "",
+        "IsRequired": false
+    },
+    {
+        "Id": 191,
+        "Label": "Modem No 1",
+        "DefaultValue": "",
+        "IsRequired": false
+    },
+    {
+        "Id": 192,
+        "Label": "Modem No 2",
+        "DefaultValue": "",
+        "IsRequired": false
+    },
+    {
+        "Id": 193,
+        "Label": "Uzak Erişim Bilgileri",
+        "DefaultValue": "",
+        "IsRequired": false
+    },
+    {
+        "Id": 194,
+        "Label": "Voice Mail",
+        "DefaultValue": "",
+        "IsRequired": false
+    },
+    {
+        "Id": 195,
+        "Label": "Digital User",
+        "DefaultValue": "",
+        "IsRequired": false
+    },
+    {
+        "Id": 196,
+        "Label": "IP User",
+        "DefaultValue": "",
+        "IsRequired": false
+    },
+    {
+        "Id": 197,
+        "Label": "SIP User",
+        "DefaultValue": "",
+        "IsRequired": false
+    },
+    {
+        "Id": 198,
+        "Label": "Analog User",
+        "DefaultValue": "",
+        "IsRequired": false
+    },
+    {
+        "Id": 199,
+        "Label": "Digital Dış Hat PRI",
+        "DefaultValue": "",
+        "IsRequired": false
+    },
+    {
+        "Id": 200,
+        "Label": "Analog Dış Hat",
+        "DefaultValue": "",
+        "IsRequired": false
+    },
+    {
+        "Id": 201,
+        "Label": "SIP Trunk",
+        "DefaultValue": "",
+        "IsRequired": false
+    },
+    {
+        "Id": 202,
+        "Label": "BRI",
+        "DefaultValue": "",
+        "IsRequired": false
+    },
+    {
+        "Id": 203,
+        "Label": "GAP Dect Dahili Konv",
+        "DefaultValue": "",
+        "IsRequired": false
+    },
+    {
+        "Id": 204,
+        "Label": "Wi-fi Dect User",
+        "DefaultValue": "",
+        "IsRequired": false
+    },
+    {
+        "Id": 205,
+        "Label": "Dect Baz İstasonu",
+        "DefaultValue": "",
+        "IsRequired": false
+    },
+    {
+        "Id": 206,
+        "Label": "4760 veya 8770 Versiyon",
+        "DefaultValue": "",
+        "IsRequired": false
+    },
+    {
+        "Id": 207,
+        "Label": "4760 veya 8770 Password",
+        "DefaultValue": "",
+        "IsRequired": false
+    },
+    {
+        "Id": 208,
+        "Label": "4760 veya 8770 PC Password",
+        "DefaultValue": "",
+        "IsRequired": false
+    },
+    {
+        "Id": 209,
+        "Label": "Automatic Att.",
+        "DefaultValue": "",
+        "IsRequired": false
+    },
+    {
+        "Id": 210,
+        "Label": "Hotel",
+        "DefaultValue": "",
+        "IsRequired": false
+    },
+    {
+        "Id": 211,
+        "Label": "CCS Version",
+        "DefaultValue": "",
+        "IsRequired": false
+    },
+    {
+        "Id": 212,
+        "Label": "Agent Sayısı",
+        "DefaultValue": "",
+        "IsRequired": false
+    },
+    {
+        "Id": 213,
+        "Label": "Networking",
+        "DefaultValue": "",
+        "IsRequired": false
+    },
+    {
+        "Id": 214,
+        "Label": "SPS Süresi",
+        "DefaultValue": "",
+        "IsRequired": false
+    }
+]

@@ -1,0 +1,66 @@
+<div class="table-container">
+  <div>
+    <h1 style="margin: 0; display: inline-block;">Kullanıcılar</h1>
+    <button style="float: right;" *ngIf="legacy" class="btn btn-primary" (click)="showAddModal()">Kullanıcı Tanımla</button>
+    <button style="float: right;" routerLink="/user/add" class="btn btn-primary">Yeni</button>
+  </div>
+  <hr>
+  <!-- export interface UserAdd {
+      nameSurname: string;
+      userName: string;
+      email: string;
+      gsml: string;
+      permission: string;
+      //no passwords yet
+  } -->
+  <table class="table table-striped table-hover">
+      <thead>
+          <tr>
+              <!-- <th>Id</th> -->
+              <!-- <th>RowGuiid</th> -->
+              <th>İsim Soyisim</th>
+              <th>Kullanıcı Adı</th>
+              <th>Email</th>
+              <th>Gsml</th>
+              <th>İzinler</th>
+              <th style="width: 5%;">Düzenle</th>
+              <th style="width: 5%;">Sil</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let user of users">
+              <!-- <td>{{user.id}}</td> -->
+              <!-- <td>{{user.rowGuiid}}</td> -->
+              <td>{{user.nameSurname}}</td>
+              <td>{{user.userName}}</td>
+              <td>{{user.email}}</td>
+              <td>{{user.gsml}}</td>
+              <td>{{user.permission | perms }}</td>
+              <td><button class="btn btn-info" routerLink="/user/edit" [queryParams]="{id: user.id}"
+                ><i class="fa fa-gear"></i></button></td>
+              <td><button class="btn btn-danger" (click)="remove(user);"
+                ><i class="fa fa-trash"></i></button></td>
+          </tr>
+      </tbody>
+  </table>
+</div>
+
+<div class="modal modal-lg fade" bsModal #addModal="bs-modal" [config]="{backdrop: 'static'}"
+     tabindex="-1" role="dialog" aria-labelledby="dialog-static-name">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 id="dialog-static-name" class="modal-title pull-left">Kullanıcı Tanımla</h4>
+        <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="hideAddModal();">
+          <span aria-hidden="true" class="visually-hidden">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <app-user-add (addItemEvent)="users.push($event)"></app-user-add> 
+        <button class="btn btn-danger ms-2" (click)="hideAddModal();">İptal</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+

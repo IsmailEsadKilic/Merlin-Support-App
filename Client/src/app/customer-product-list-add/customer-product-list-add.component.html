@@ -1,0 +1,78 @@
+<!-- <strong>for cu {{forCustomerId}} / </strong>
+<strong>cpl id {{customerProductListId}}</strong>
+
+<p>addFromModal: boolean = false;
+editFromList: boolean = false;
+addFromUserEdit: boolean = false;
+addWithUser: boolean = false;</p>
+
+<strong *ngIf="addFromModal">addFromModal </strong>
+<strong *ngIf="editFromList">editFromList </strong>
+<strong *ngIf="addFromUserEdit">addFromUserEdit </strong>
+<strong *ngIf="addWithUser">addWithUser </strong> -->
+
+<div *ngIf="debug">
+    <strong *ngIf="addWithUser">addWithUser </strong>
+    <strong *ngIf="addFromUserEdit">addFromUserEdit </strong>
+    <strong *ngIf="addFromModal">addFromModal </strong>
+    <strong *ngIf="editFromList">editFromList </strong>
+    <div>
+        <strong>for {{forCustomerId}} </strong>
+        <strong>cpl {{customerProductListId}}</strong>
+    </div>    
+</div>
+<button class="btn btn-primary" routerLink="/product" *ngIf="editFromList && legacy">Listeye Dön</button>
+<button class="btn btn-primary" routerLink="/product" *ngIf="(addFromModal || editFromList) && !legacy">Listeye Dön</button>
+<h1 style="text-align: center;">{{addWithUser ? 'Eklenecek' : ''}} {{(addWithUser || addFromUserEdit)? 'Müşteriye' : ''}} Lisans {{editFromList ? '' : 'Ekle'}}</h1>
+<hr>
+<form *ngIf="customerProductListAddFormInitialised" [formGroup]="customerProductListAddForm">
+    <div class="row">
+        <div class="col-md-6">
+            <label>Lisans Açıklaması</label>
+            <strong> *</strong>
+            <app-text-input [formControl]="$any(customerProductListAddForm.controls['description'])" [label]="'Ürün Açıklaması'"></app-text-input>
+        </div>
+        <div class="col-md-6">
+            <label>Versiyon</label>
+            <strong> *</strong>
+            <app-text-input [formControl]="$any(customerProductListAddForm.controls['version'])" [label]="'Versiyon'"></app-text-input>
+        </div>
+        <div class="col-md-6">
+            <label>Başlangıç Tarihi</label>
+            <strong> *</strong>
+            <app-date-input [formControl]="$any(customerProductListAddForm.controls['firstDate'])" [label]="'Başlangıç Tarihi'"></app-date-input>
+
+        </div>
+        <div class="col-md-6">
+            <label>Bitiş Tarihi</label>
+            <strong> *</strong>
+            <app-date-input [formControl]="$any(customerProductListAddForm.controls['endDate'])" [label]="'Bitiş Tarihi'"></app-date-input>
+        </div>
+        <div *ngIf="addFromModal" class="col-md-6">
+            <label>Müşteri</label>
+            <strong> *</strong>
+            <select class="form-select" [formControl]="$any(customerProductListAddForm.controls['customerId'])">
+                <option *ngFor="let customer of customerList" [value]="customer.id">{{customer.companyName}}</option>
+            </select>
+        </div>
+        <div class="col-md-6">
+            <label>Ürün</label>
+            <strong> *</strong>
+            <select class="form-select" [formControl]="$any(customerProductListAddForm.controls['productId'])">
+                <option *ngFor="let product of productList" [value]="product.id">{{product.productName}}</option>
+            </select>
+        </div>
+        
+    </div>
+    <div class="row" *ngIf="customerProductListAddFormErrors">
+        <ul class="text-danger">
+            <li class="ms-4" *ngFor="let error of customerProductListAddFormErrors">{{error}}</li>
+        </ul>
+    </div>
+</form>
+<strong>Lisansı: </strong>
+<button *ngIf="addFromUserEdit || addWithUser" (click)="emitWithoutSaving()" class="btn btn-success me-2">Ekle</button>
+<button *ngIf="addFromModal || editFromList" (click)="trySubmitCustomerProductListAddForm()" class="btn btn-success me-2">Kaydet</button>
+<button class="btn btn-warning me-2" type="button" (click)="resetCustomerProductListAddForm()">{{(customerProductListId > 0) ? 'Değişiklikleri Geri Al' : 'Temizle'}}</button>
+<button class="btn btn-primary" routerLink="/product" *ngIf="editFromList && legacy">Listeye Dön</button>
+<button class="btn btn-primary" routerLink="/product" *ngIf="(addFromModal || editFromList) && !legacy">Listeye Dön</button>

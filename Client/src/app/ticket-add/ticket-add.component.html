@@ -1,0 +1,113 @@
+<!-- <h1 style="text-align: center;" *ngIf="ticketId < 1"> Ticket Ekle</h1>
+<h1 style="text-align: center;" *ngIf="ticketId > 0"> Ticket: {{ticketSubject}}</h1> -->
+<div>
+    <h1 style="text-align: center; margin: 0; display: inline-block;"> Ticket Ekle</h1>
+    <button style="float: right;"  routerLink="/ticket" class="btn btn-primary">Listeye Dön</button>
+</div>
+<hr>
+<form [formGroup]="ticketAddForm" (ngSubmit)="onSubmit()" autocomplete="off" *ngIf="ticketAddFormInitialised">
+    <div >   
+        <div class="row">
+            <div class="col-md-12">
+                <label>Müşteri</label>
+                <strong> *</strong>
+                <select class="form-select" [formControl]="$any(ticketAddForm.controls['customerId'])">
+                    <option *ngFor="let customer of customerLookup" [value]="customer.id">{{customer.companyName}}</option>
+                </select>
+                <div class="invalid-feedback" *ngIf="$any(ticketAddForm.controls['customerId']).errors?.['required']">lütfen müşteri seçin</div>
+            </div>
+            <div class="col-md-12">
+                <label>Konu</label>
+                <strong> *</strong>
+                <app-text-input [formControl]="$any(ticketAddForm.controls['subject'])" [label]="'Konu'"></app-text-input>
+            </div>
+            <div class="col-md-6">
+                <label>Ürün</label>
+                <strong> *</strong>
+    
+                <select class="form-select" [formControl]="$any(ticketAddForm.controls['productId'])">
+                    <option *ngIf="productLookup.length < 1 && customerId > 0" [value]="0">Müşteriye ait ürün bulunamadı</option>
+                    <option *ngIf="productLookup.length < 1" [value]="0">Müşteri Seçin</option>
+                    <option *ngIf="!(productLookup.length < 1)" [value]="0">ürün Seçin</option>
+                    <ng-container *ngFor="let product of productLookup">
+                        <option *ngIf="product.customerHasValidLicense" [value]="product.id">{{product.productName}} id: {{product.id}}</option>
+                        <option class="invalid-option" *ngIf="!product.customerHasValidLicense" [value]="product.id" disabled>{{product.productName}} (Müşteriye ait aktif lisans bulunamadı)</option>
+                    </ng-container>
+                </select>
+    
+                
+                <div class="invalid-feedback" *ngIf="$any(ticketAddForm.controls['productId']).errors?.['required']">lütfen ürün seçin</div>
+                <div class="invalid-feedback" *ngIf="$any(ticketAddForm.controls['productId']).errors?.['isZero']">lütfen ürün seçin</div>
+            </div>
+            <div class="col-md-6">
+                <label>Priority</label>
+                <strong> *</strong>
+                <select class="form-select" [formControl]="$any(ticketAddForm.controls['priorityId'])">
+                    <option *ngFor="let priority of priorityLookup" [value]="priority.id">{{priority.priorityName}}</option>
+                </select>
+                <div class="invalid-feedback" *ngIf="$any(ticketAddForm.controls['priorityId']).errors?.['required']">lütfen öncelik seçin</div>
+            </div>
+            <div class="col-md-6">
+                <label>Departman</label>
+                <strong> *</strong>
+                <select class="form-select" [formControl]="$any(ticketAddForm.controls['teamId'])">
+                    <option *ngFor="let team of teamLookup" [value]="team.id">{{team.teamName}}</option>
+                </select>
+                <div class="invalid-feedback" *ngIf="$any(ticketAddForm.controls['teamId']).errors?.['required']">lütfen departman seçin</div>
+            </div>
+            <div class="col-md-6">
+                <label>Tip</label>
+                <strong> *</strong>
+                <select class="form-select" [formControl]="$any(ticketAddForm.controls['ticketTypeId'])">
+                    <option *ngFor="let ticketType of ticketTypeLookup" [value]="ticketType.id">{{ticketType.name}}</option>
+                </select>
+                <div class="invalid-feedback" *ngIf="$any(ticketAddForm.controls['ticketTypeId']).errors?.['required']">lütfen tip seçin</div>
+            </div>
+            <!-- <div class="col-md-12">
+                <label>Açıklama</label>
+                <strong> *</strong>
+                <app-text-input [formControl]="$any(ticketAddForm.controls['description'])" [label]="'Açıklama'"></app-text-input>
+            </div> -->
+        </div>
+    </div>
+    <hr *ngIf="teamId > 0">
+    <div *ngIf="teamId > 0" class="mx-0 row inner-add-1">
+        <h2 style="text-align: center;">{{teamName}} Departman Üyelerine Ata:</h2>
+        <div class="col-md-6">
+            <input type="checkbox" [value]="all" [(ngModel)] = "all" [ngModelOptions]="{standalone: true}" (change)="allFn()">
+            <button class="btn tgbtn" (click)="all = !all; allFn();">Tümünü Seç</button>
+        </div>
+        <div class="row mt-3">
+            <div *ngFor="let teamMember of teamMembers" class="col-md-6 mt-2">
+                <input type="checkbox" [value]="teamMember.value " [(ngModel)] = "teamMember.value" [ngModelOptions]="{standalone: true}">
+                <button class="btn tgbtn" (click)="teamMember.value = !teamMember.value">{{teamMember.name}}</button>
+            </div>
+         </div>
+    </div>
+    <div class="row" *ngIf="ticketAddFormErrors">
+        <ul class="text-danger">
+            <li *ngFor="let error of ticketAddFormErrors">{{error}}</li>
+        </ul>
+    </div>
+</form>
+<hr>
+<div class="inner-add-3 mh-1">
+    <div class="col-12">
+        <app-html-editor></app-html-editor>
+    </div>
+</div>
+<hr>
+<div class="inner-add-2">
+    <div class="col-12">
+        <app-file-input></app-file-input>
+    </div>
+</div>
+<div class="mt-2">
+    <button (click)="trySubmitTicketAddForm()" class="btn btn-success me-2">Kaydet</button>
+    <button class="btn btn-warning me-2" (click)="resetTicketAddForm()">Temizle</button> 
+    <button class="btn btn-primary" routerLink="/ticket">Listeye Dön</button>
+</div>
+
+<!-- <button class="btn btn-warning me-2" type="button" (click)="resetTicketAddForm()">{{(ticketId > 0) ? 'Değişiklikleri Geri Al' : 'Temizle'}}</button>
+<button class="btn btn-primary" routerLink="/ticket" *ngIf="ticketId > 0 && legacy">Listeye Dön</button>
+<button class="btn btn-primary" routerLink="/ticket" *ngIf="!legacy">Listeye Dön</button>``` -->

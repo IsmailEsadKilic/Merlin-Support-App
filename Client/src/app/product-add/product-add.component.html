@@ -1,0 +1,25 @@
+<button class="btn btn-primary" routerLink="/product" *ngIf="productId > 0 && legacy">Listeye Dön</button>
+<button class="btn btn-primary" routerLink="/product" *ngIf="!legacy">Listeye Dön</button>
+<h1 style="text-align: center;" *ngIf="productId< 1"> Ürün Ekle</h1>
+<h1 style="text-align: center;" *ngIf="productId > 0"> Ürün: {{productName}}</h1>
+<hr>
+<form *ngIf="productAddFormInitialised" [formGroup]="productAddForm" (ngSubmit)="onSubmit()" autocomplete="off">
+    <div class="row">
+        <div class="col-md-6">
+            <label>Ürün İsmi</label>
+            <strong> *</strong>
+            <app-text-input [formControl]="$any(productAddForm.controls['productName'])" [label]="'Ürün İsmi'"></app-text-input>
+        </div>
+    </div>
+    <div class="row" *ngIf="productAddFormErrors">
+        <ul class="text-danger">
+            <li *ngFor="let error of productAddFormErrors">{{error}}</li>
+        </ul>
+    </div>
+</form>
+<button (click)="trySubmitProductAddForm()" class="btn btn-success me-2">Kaydet</button>
+<button class="btn btn-warning me-2" type="button" (click)="resetProductAddForm()">{{(productId > 0) ? 'Değişiklikleri Geri Al' : 'Temizle'}}</button>
+<button class="btn btn-primary" routerLink="/product" *ngIf="productId > 0 && legacy">Listeye Dön</button>
+<button class="btn btn-primary" routerLink="/product" *ngIf="!legacy">Listeye Dön</button>
+<!-- 
+ -->

@@ -1,0 +1,65 @@
+<button class="btn btn-primary" routerLink="/user" *ngIf="userId > 0 && legacy">Listeye Dön</button>
+<button class="btn btn-primary" routerLink="/user" *ngIf="!legacy">Listeye Dön</button>
+<h1 style="text-align: center;" *ngIf="userId < 1"> Kullanıcı Ekle</h1>
+<h1 style="text-align: center;" *ngIf="userId > 0"> Kullanıcı: {{userName}}</h1>
+<form *ngIf="userAddFormInitialised" [formGroup]="userAddForm" (ngSubmit)="onSubmit()" autocomplete="off">
+    <div class="row">
+        <div class="col-md-6">
+            <label>Ad Soyad</label>
+            <strong> *</strong>
+            <app-text-input [formControl]="$any(userAddForm.controls['nameSurname'])" [label]="'Ad Soyad'"></app-text-input>
+        </div>
+        <div class="col-md-6">
+            <label>Kullanıcı Adı</label>
+            <strong> *</strong>
+            <app-text-input [formControl]="$any(userAddForm.controls['userName'])" [label]="'Kullanıcı Adı'"></app-text-input>
+        </div>
+        <div *ngIf="!userId" class="col-md-6">
+            <label>Şifre</label>
+            <strong> *</strong>
+            <app-text-input [formControl]="$any(userAddForm.controls['password'])" [label]="'Şifre'"></app-text-input>
+        </div>
+        <div class="col-md-6">
+            <label>Email</label>
+            <strong> *</strong>
+            <app-text-input [formControl]="$any(userAddForm.controls['email'])" [label]="'Email'"></app-text-input>
+        </div>
+        <div class="col-md-6">
+            <label>GSML</label>
+            <strong> *</strong>
+            <app-text-input [formControl]="$any(userAddForm.controls['gsml'])" [label]="'GSML'"></app-text-input>
+        </div>
+        <hr>
+        <h2 style="text-align: center;">İzinler</h2>
+        <!-- checkall -->
+        <div class="col-md-6">
+            <input type="checkbox" [value]="all" [(ngModel)] = "all" [ngModelOptions]="{standalone: true}" (change)="allFn()">
+            <button class="btn tgbtn" (click)="all = !all; allFn();">Tümünü Seç</button>
+        </div>
+        <div class="row mt-3">
+            <div *ngFor="let permission of permissionDescriptions" class="col-md-6 mt-2">
+                <input type="checkbox" [value]="permission.value " [(ngModel)] = "permission.value" [ngModelOptions]="{standalone: true}">
+                <button class="btn tgbtn" (click)="permission.value = !permission.value">{{permission.label}}</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" *ngIf="userAddFormErrors">
+        <ul class="text-danger">
+            <li *ngFor="let error of userAddFormErrors">{{error}}</li>
+        </ul>
+    </div>
+</form>
+<button (click)="trySubmitUserAddForm()" class="btn btn-success me-2">Kaydet</button>
+<button class="btn btn-warning me-2" type="button" (click)="resetUserAddForm()">{{(userId > 0) ? 'Değişiklikleri Geri Al' : 'Temizle'}}</button>
+<button class="btn btn-primary" routerLink="/user" *ngIf="userId > 0 && legacy">Listeye Dön</button>
+<button class="btn btn-primary" routerLink="/user" *ngIf="!legacy">Listeye Dön</button>
+
+<!-- // export interface UserAdd {
+    //   nameSurname: string;
+    //   userName: string;
+    //   email: string;
+    //   gsml: string;
+    //   permission: string;
+    //   //no passwords yet
+     -->

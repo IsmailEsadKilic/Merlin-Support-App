@@ -1,0 +1,119 @@
+
+<nav style="height: 80px;" class="navbar navbar-expand-lg bg-light" data-bs-theme="light">
+  <div class="container-fluid">
+    <a class="navbar-brand active" routerLink="/" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active">Merlin Destek Uygulaması
+      <span class="visually-hidden">(current)</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav me-auto">
+        <!-- <ng-container *ngIf="(accountService.currentUser$ | async)"> -->
+        <ng-container *ngIf="userAny">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/customer" routerLinkActive="active">Müşteri</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/user" routerLinkActive="active">Kullanıcı</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/team" routerLinkActive="active">Takım</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/ticket" routerLinkActive="active">Ticket</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/ticketProperty" routerLinkActive="active">Ticket Özellikleri</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/product" routerLinkActive="active">Ürün</a>
+          </li>
+        </ng-container>
+      </ul>
+      <!-- <form class="d-flex">
+        <input class="form-control me-sm-2" type="search" placeholder="Search">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Ara</button>
+      </form> -->
+        <!-- <div class="dropdown" *ngIf="(accountService.currentUser$ | async) as user" dropdown> -->
+        <div class="dropdown" *ngIf="userAny as User" dropdown>
+          <a class="dropdown-toggle text-white btn btn-success" dropdownToggle>Hoşgeldin {{userAny.userName | titlecase}} </a>
+          <div class="dropdown-menu mt-3" *dropdownMenu>
+              <a class="dropdown-item" (click)="Logout()">Çıkış</a>
+              <a class="dropdown-item" (click)="changePassword()">Şifre Değiştir</a>
+          </div>
+        </div>
+
+        <!-- <form *ngIf="!(accountService.currentUser$ | async)" #LoginForm= "ngForm" class="d-flex" (ngSubmit)="Login()" autocomplete="off">
+          <input
+          name="userName"
+          [(ngModel)]="login.userName"
+          class="form-control me-2"
+          type="text"
+          placeholder="UserName">
+          <input
+          name="password"
+          [(ngModel)]="login.password"
+          class="form-control me-2"
+          type="password"
+          placeholder="Password">
+          <button class="btn btn-success" type="submit">Giriş</button>
+        </form> -->
+
+        <!-- use form group instead of ngForm -->
+
+        <!-- <form class="d-flex" *ngIf="!(accountService.currentUser$ | async)" [formGroup]="loginForm" (ngSubmit)="Login()" autocomplete="off"> -->
+        <form class="d-flex" *ngIf="!userAny" [formGroup]="loginForm" (ngSubmit)="Login()" autocomplete="off">
+          <app-text-input class="mx-2" [formControl]="$any(loginForm.controls['userName'])" [label]="'Kullanıcı Adı'" [type]="'text'"></app-text-input>
+          <app-text-input class="mx-2" [formControl]="$any(loginForm.controls['password'])" [label]="'Şifre'" [type]="'password'"></app-text-input>
+          <button style="height: 40px;" [disabled]="!loginForm.valid" class="btn btn-success" type="submit">Giriş</button>
+        </form>
+    </div>
+  </div>
+</nav>
+
+<div class="modal modal-lg fade" bsModal #staticModal="bs-modal" [config]="{backdrop: 'static'}"
+     tabindex="-1" role="dialog" aria-labelledby="dialog-static-name">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 id="dialog-static-name" class="modal-title pull-left">Şifre Değiştir</h4>
+        <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="staticModal.hide()">
+          <span aria-hidden="true" class="visually-hidden">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="changeForm" (ngSubmit)="changeForm.valid && change()" autocomplete="off">
+            <div class="d-flex">
+                <div class="mx-2">
+                    <label>Eski Şifre</label>
+                    <app-text-input [formControl]="$any(changeForm.controls['oldPassword'])" [label]="'Eski Şifre'" [type]="'password'"></app-text-input>
+                </div>
+                <div class="mx-2">
+                    <label>Yeni Şifre</label>
+                    <app-text-input class="mx-4" [formControl]="$any(changeForm.controls['password'])" [label]="'Yeni Şifre'" [type]="'password'"></app-text-input>
+                </div>
+                <div class="mx-2">
+                    <label>Yeni Şifre Doğrula</label>
+                    <app-text-input [formControl]="$any(changeForm.controls['confirmPassword'])" [label]="'Yeni Şifre Doğrula'" [type]="'password'"></app-text-input>
+                </div>
+            </div>
+            <div class="row" *ngIf="validationErrors">
+                <ul class="text-danger">
+                    <li *ngFor="let error of validationErrors">{{error}}</li>
+                </ul>
+            </div>
+        
+            <div class="text-center mt-2">
+                <button [disabled]="!changeForm.valid" class="btn btn-success me-2" type="submit">Kaydet</button>
+                <button class="btn btn-warning" type="button" (click)="clear()">Temizle</button>
+            </div>
+        </form>
+        <button class="btn btn-danger ms-2" (click)="staticModal.hide()">İptal</button>
+      </div>
+    </div>
+  </div>
+</div>
+

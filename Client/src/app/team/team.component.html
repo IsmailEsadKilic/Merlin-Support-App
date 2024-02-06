@@ -1,0 +1,49 @@
+<div class="table-container">
+  <h1>Takımlar</h1>
+  <button  *ngIf="legacy" class="btn btn-primary" (click)="showAddModal()">Takım Ekle</button>
+  <button routerLink="/team/add" class="btn btn-primary">Takım Ekle</button>
+  <hr>
+  <table class="table table-striped table-hover">
+      <thead>
+          <tr>
+              <!-- <th>Id</th> -->
+              <!-- <th>RowGuiid</th> -->
+              <th>Takım İsmi</th>
+              <th>Takım Üyeleri</th>
+              <th style="width: 5%;">Düzenle</th>
+              <th style="width: 5%;">Sil</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let teams of teams">
+              <!-- <td>{{teams.id}}</td> -->
+              <!-- <td>{{teams.rowGuiid}}</td> -->
+              <td>{{teams.teamName}}</td>
+              <td>{{teams.teamMemberDtos | name }}</td>
+              <td><button class="btn btn-info" routerLink="/team/edit" [queryParams]="{id: teams.id}"
+                ><i class="fa fa-gear"></i></button></td>
+              <td><button class="btn btn-danger" (click)="remove(teams);"
+                ><i class="fa fa-trash"></i></button></td>
+          </tr>
+      </tbody>
+  </table>
+  
+  
+  <div class="modal modal-lg fade" bsModal #addModal="bs-modal" [config]="{backdrop: 'static'}"
+       tabindex="-1" role="dialog" aria-labelledby="dialog-static-name">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 id="dialog-static-name" class="modal-title pull-left">Takım Ekle</h4>
+          <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="hideAddModal();">
+            <span aria-hidden="true" class="visually-hidden">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <app-team-add (addItemEvent)="teams.push($event)"></app-team-add>
+          <button class="btn btn-danger ms-2" (click)="hideAddModal();">İptal</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

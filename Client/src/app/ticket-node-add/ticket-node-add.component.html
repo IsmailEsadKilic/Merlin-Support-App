@@ -1,0 +1,15 @@
+<h1 class="text-center">Ticket Node Ekle</h1>
+<hr>
+<button class="btn btn-primary me-2" (click)="SubmitTicketNode()">Mesaj Ekle</button>
+<button routerLink="/ticket/edit/" [queryParams]="{ticketId: ticketNodeAdd.ticketId}" class="btn btn-primary">Ticketa Dön</button>
+<div class="inner-add-1 mt-2">
+    <app-html-editor></app-html-editor>
+</div>
+<hr>
+<div class="inner-add-2">
+    <app-file-input></app-file-input>
+</div>
+<div class="mt-2">
+    <button class="btn btn-primary me-2" (click)="SubmitTicketNode()">Mesaj Ekle</button>
+    <button routerLink="/ticket/edit/" [queryParams]="{ticketId: ticketNodeAdd.ticketId}" class="btn btn-primary">Ticketa Dön</button>
+</div>    

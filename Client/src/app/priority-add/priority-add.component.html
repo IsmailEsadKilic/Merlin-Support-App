@@ -1,0 +1,47 @@
+<button class="btn btn-primary" routerLink="/ticketProperty" *ngIf="priorityId > 0 && legacy">Listeye Dön</button>
+<button class="btn btn-primary" routerLink="/ticketProperty" *ngIf="!legacy">Listeye Dön</button>
+<h1 style="text-align: center;" *ngIf="priorityId < 1"> Öncelik Ekle</h1>
+<h1 style="text-align: center;" *ngIf="priorityId > 0"> Öncelik: {{priorityName}}</h1>
+<hr>
+<form *ngIf="priorityAddFormInitialised" [formGroup]="priorityAddForm" (ngSubmit)="onSubmit()" autocomplete="off">
+    <div class="row">
+        <div class="col-md-6">
+            <label>Öncelik İsmi</label>
+            <strong> *</strong>
+            <app-text-input [formControl]="$any(priorityAddForm.controls['priorityName'])" [label]="'Öncelik İsmi'"></app-text-input>
+        </div>
+        <div class="col-md-6">
+            <label>Öncelik Süresi</label>
+            <strong> *</strong>
+            <app-text-input [formControl]="$any(priorityAddForm.controls['time'])" [label]="'Öncelik Süresi'"></app-text-input>
+        </div>
+        <div class="col-md-6">
+            <label>Öncelik Süresi Tipi</label>
+            <!-- dropdown -->
+            <!-- // export enum TimeType {
+                //   Minutes = 1,
+                //   Hours = 2,
+                //   Days = 3
+                // } -->
+            <strong> *</strong>
+            <select class="form-select" [formControl]="$any(priorityAddForm.controls['timeType'])">
+                <option *ngFor="let timeType of timeTypeList" [value]="timeType.value">{{timeType.name}}</option>
+            </select>
+
+        </div>
+        <div class="col-md-6">
+            <label>Öncelik Sırası</label>
+            <app-text-input [formControl]="$any(priorityAddForm.controls['listIndex'])" [label]="'Öncelik Sırası'"></app-text-input>
+        </div>
+    </div>
+    <div class="row" *ngIf="priorityAddFormErrors">
+        <ul class="text-danger">
+            <li *ngFor="let error of priorityAddFormErrors">{{error}}</li>
+        </ul>
+    </div>
+</form>
+<strong class="me-2">Önceliği: </strong>
+<button (click)="trySubmitPriorityAddForm()" class="btn btn-success me-2">Kaydet</button>
+<button class="btn btn-warning me-2" type="button" (click)="resetPriorityAddForm()">{{(priorityId > 0) ? 'Değişiklikleri Geri Al' : 'Temizle'}}</button>
+<button class="btn btn-primary" routerLink="/ticketProperty" *ngIf="priorityId > 0 && legacy">Listeye Dön</button>
+<button class="btn btn-primary" routerLink="/ticketProperty" *ngIf="!legacy">Listeye Dön</button>

@@ -1,0 +1,72 @@
+<h2 style="text-align: center;">Dosya    Ekle</h2>
+<strong class="ms-1">maximum boyut: 30mb</strong>
+<div *ngIf="!uploading">
+    <hr>
+    <strong *ngIf="files.length < 1 && completedFiles.length < 1" class="ms-2">{{"Dosya Eklenmedi"}}</strong>
+    <ul>
+        <li *ngFor="let file of files">
+            <strong>
+                {{file.name}} 
+            </strong>
+            {{file.size | filesize}}
+            <a href="javascript:void(0)" (click)="removeFile(file)">
+                <i class="fa fa-trash"></i>
+            </a>
+        </li>
+        <li *ngFor="let file of completedFiles">
+            <strong>
+                {{file.name}} 
+            </strong>
+            {{file.size | filesize}}
+            <i class="fa fa-check"></i>
+        </li>
+    </ul>
+</div>
+
+<div *ngFor="let formDataUpload of formDataUploads">
+    <hr>
+    <strong>
+        {{formDataUpload.fileName}}
+    </strong>
+    <button class="cancel-upload btn btn-sm btn-danger" (click)="cancelUpload(formDataUpload)" 
+        *ngIf="formDataUpload.progress">İptal
+    </button>
+    <div class="progress mt-2">
+        <progressbar  [max]="100" [value]="formDataUpload.progress" type="danger" [striped]="true" [animate]="true">
+            <i>{{formDataUpload.progress}} / 100</i>
+        </progressbar>
+    </div>
+</div>
+
+<input
+    *ngIf="!uploading"
+    type="file"
+    class="form-control"
+    (change)="onFileChange($event)"
+>
+
+<button class="btn btn-primary mt-1 mb-1" (click)="uploadFiles()" *ngIf="files.length > 0 && forTicketId > 0">Ticket a dosya ekle</button>
+
+<!-- 
+<button class="btn btn-lg" (click)="uploadFiles('ticket', 5)" >temp btn</button>
+in the parent -->
+
+<!-- <input type="file" class="file-input"
+        [accept]="requiredFileType"
+       (change)="onFileSelected($event)" #fileUpload>
+
+<div class="file-upload">
+   {{fileName || "No file uploaded yet."}}
+    <button class="btn btn-success upload-btn" color="primary"
+      (click)="fileUpload.click()">
+        <i class="fa fa-file"></i>
+    </button>
+</div>
+
+<div class="progress">
+    <progressbar [max]="100" [value]="66" type="danger" [striped]="true" [animate]="true"><i>66 / 100</i></progressbar>
+  
+    <button class="cancel-upload btn btn-danger" (click)="cancelUpload()" 
+              *ngIf="uploadProgress">delete_forever</button>
+
+  </div> -->
