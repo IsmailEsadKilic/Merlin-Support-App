@@ -12,7 +12,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
-    [AllowAnonymous]
     public class TicketController : BaseApiController
     {
         private readonly IMapper _mapper;
@@ -25,18 +24,21 @@ namespace API.Controllers
 
         }
 
+        [Authorize(Roles = "113, 134")]
         [HttpGet("ticket")]
         public async Task<ActionResult<TicketDto>> GetTicketsAsync()
         {
             return Ok(await _uow.TicketRepository.GetTicketDtosAsync());
         }
 
+        [Authorize]
         [HttpGet("ticket/{id}")]
         public async Task<ActionResult<TicketDto>> GetTicketAsync(int id)
         {
             return Ok(await _uow.TicketRepository.GetTicketDtoAsync(id));
         }
 
+        [Authorize(Roles = "113, 135")]
         [HttpPut("ticket/add")]
         public async Task<ActionResult<TicketDto>> AddTicketAsync(TicketDto ticketDto)
         {
@@ -45,9 +47,6 @@ namespace API.Controllers
             Ticket ticket = _mapper.Map<Ticket>(ticketDto);
             ticket.RowGuid = Guid.NewGuid().ToString();
             ticket.TicketStateId = 1;
-
-            Console.WriteLine("asdf Ticket: ");
-            Console.WriteLine(JsonSerializer.Serialize(ticket));
 
             var UserId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
             if (UserId > 0)
@@ -86,6 +85,7 @@ namespace API.Controllers
             }
         }
 
+        [Authorize(Roles = "113, 156")]
         [HttpPost("ticket/update/{id}")]
         public async Task<ActionResult<TicketDto>> UpdateTicketAsync(int id, TicketDto ticketDto)
         {
@@ -103,6 +103,7 @@ namespace API.Controllers
             }
         }
 
+        [Authorize(Roles = "113, 114")]
         [HttpDelete("ticket/{id}")]
         public async Task<ActionResult<bool>> DeleteTicketAsync(int id)
         {
@@ -122,13 +123,15 @@ namespace API.Controllers
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        
+
+        [Authorize] 
         [HttpGet("ticketNodesByTicketId/{id}")]
         public async Task<ActionResult<TicketNodeDto>> GetTicketNodeAsync(int id)
         {
             return Ok(await _uow.TicketRepository.GetTicketNodeDtosByTicketIdAsync(id));
         }
 
+        [Authorize]
         [HttpPut("ticketNode/add")]
         public async Task<ActionResult<TicketNodeDto>> AddTicketNodeAsync(TicketNodeDto ticketNodeDto)
         {
@@ -149,6 +152,7 @@ namespace API.Controllers
             }
         }
 
+        [Authorize]
         [HttpDelete("ticketNode/{id}")]
         public async Task<ActionResult<bool>> DeleteTicketNodeAsync(int id)
         {
@@ -169,18 +173,21 @@ namespace API.Controllers
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+        [Authorize]
         [HttpGet("ticketType")]
         public async Task<ActionResult<TicketTypeDto>> GetTicketTypesAsync()
         {
             return Ok(await _uow.TicketRepository.GetTicketTypeDtosAsync());
         }
 
+        [Authorize]
         [HttpGet("ticketType/{id}")]
         public async Task<ActionResult<TicketTypeDto>> GetTicketTypeAsync(int id)
         {
             return Ok(await _uow.TicketRepository.GetTicketTypeDtoAsync(id));
         }
 
+        [Authorize(Roles = "144, 113")]
         [HttpPut("ticketType/add")]
         public async Task<ActionResult<TicketTypeDto>> AddTicketTypeAsync(TicketTypeDto ticketTypeDto)
         {
@@ -199,6 +206,7 @@ namespace API.Controllers
             }
         }
 
+        [Authorize(Roles = "145, 113")]
         [HttpPut("ticketType/update/{id}")]
         public async Task<ActionResult<TicketTypeDto>> UpdateTicketTypeAsync(int id, TicketTypeDto ticketTypeDto)
         {
@@ -214,6 +222,7 @@ namespace API.Controllers
             }
         }
 
+        [Authorize(Roles = "146, 157, 113")]
         [HttpDelete("ticketType/{id}")]
         public async Task<ActionResult<bool>> DeleteTicketTypeAsync(int id)
         {
@@ -235,19 +244,21 @@ namespace API.Controllers
         
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
+        [Authorize]
         [HttpGet("priority")]
         public async Task<ActionResult<PriorityDto>> GetPrioritiesAsync()
         {
             return Ok(await _uow.TicketRepository.GetPriorityDtosAsync());
         }
 
+        [Authorize]
         [HttpGet("priority/{id}")]
         public async Task<ActionResult<PriorityDto>> GetPriorityAsync(int id)
         {
             return Ok(await _uow.TicketRepository.GetPriorityDtoAsync(id));
         }
 
+        [Authorize(Roles = "152, 113")]
         [HttpPut("priority/add")]
         public async Task<ActionResult<PriorityDto>> AddPriorityAsync(PriorityDto priorityDto)
         {
@@ -266,6 +277,7 @@ namespace API.Controllers
             }
         }
 
+        [Authorize(Roles = "153, 113")]
         [HttpPut("priority/update/{id}")]
         public async Task<ActionResult<PriorityDto>> UpdatePriorityAsync(int id, PriorityDto priorityDto)
         {
@@ -281,6 +293,7 @@ namespace API.Controllers
             }
         }
 
+        [Authorize(Roles = "154, 155, 113")]
         [HttpDelete("priority/{id}")]
         public async Task<ActionResult<bool>> DeletePriorityAsync(int id)
         {
@@ -298,6 +311,7 @@ namespace API.Controllers
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         
+        [Authorize]
         [HttpGet("timeTypesDict")]
         public ActionResult<Dictionary<string, string>> GetTimeTypesDict()
         {
@@ -305,6 +319,7 @@ namespace API.Controllers
             return Ok(en);
         }
 
+        [Authorize]
         [HttpGet("ticketStatesDict")]
         public ActionResult<Dictionary<string, string>> GetTicketStatesDict()
         {

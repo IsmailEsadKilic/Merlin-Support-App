@@ -85,7 +85,7 @@ export class TicketAddComponent implements OnInit {
       },
       error: (err) => {
         console.log(err);
-        this.toastrService.error(err.error);
+        this.toastrService.error(err.error || "Lookups getirilemedi.");
       }
     })
   }
@@ -188,7 +188,7 @@ export class TicketAddComponent implements OnInit {
         },
         error: err => {
           console.log(err);
-          this.toastrService.error(err.error);
+          this.toastrService.error(err.error || "Ticket Eklenemedi.");
         }
       });
       // }

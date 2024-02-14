@@ -46,8 +46,10 @@ import { HtmlEditorComponent } from './html-editor/html-editor.component';
 import { TicketNodeAddComponent } from './ticket-node-add/ticket-node-add.component';
 import { FileDisplayComponent } from './file-display/file-display.component';
 import { MemberNamesPipe } from './pipes/member-names.pipe';
+import { PermissionProfileAddComponent } from './permission-profile-add/permission-profile-add.component';
 @NgModule({
     declarations: [
+        PermissionProfileAddComponent,
         TicketNodeAddComponent,
         FileDisplayComponent,
         HtmlEditorComponent,

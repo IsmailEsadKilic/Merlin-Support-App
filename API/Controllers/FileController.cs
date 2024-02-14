@@ -44,7 +44,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
-    [AllowAnonymous]
     public class FileController : BaseApiController
     {
         private readonly UnitOfWork _unitOfWork;
@@ -56,6 +55,7 @@ namespace API.Controllers
             _mapper = mapper;
         }
 
+        [Authorize(Roles = "122, 113")]
         [HttpPost("upload")]
         public async Task<IActionResult> UploadFile()
         {
@@ -151,6 +151,7 @@ namespace API.Controllers
             }
         }
         
+        [Authorize]
         [HttpGet("ticket/{ticketId}")]
         public async Task<IActionResult> GetFilesByTicketId(long ticketId)
         {
@@ -164,6 +165,7 @@ namespace API.Controllers
             return Ok(files);
         }
 
+        [Authorize]
         [HttpGet("ticketnode/{ticketNodeId}")]
         public async Task<IActionResult> GetFilesByTicketNodeId(long ticketNodeId)
         {
@@ -177,6 +179,7 @@ namespace API.Controllers
             return Ok(files);
         }
 
+        [Authorize(Roles = "124, 113")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteFile(long id)
         {
@@ -206,6 +209,7 @@ namespace API.Controllers
 //     });
 //   }
 
+        [Authorize]
         [HttpGet("download/{id}")]
         public async Task<IActionResult> DownloadFile(long id)
         {

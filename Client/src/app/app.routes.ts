@@ -16,6 +16,7 @@ import { TicketComponent } from './ticket/ticket.component';
 import { TicketAddComponent } from './ticket-add/ticket-add.component';
 import { TicketEditComponent } from './ticket-edit/ticket-edit.component';
 import { TicketNodeAddComponent } from './ticket-node-add/ticket-node-add.component';
+import { PermissionProfileAddComponent } from './permission-profile-add/permission-profile-add.component';
 
 export const routes: Routes = [
     {path: '', component: HomeComponent},
@@ -53,7 +54,8 @@ export const routes: Routes = [
 
         {path: 'user', component: UserComponent},
         {path: 'user/add', component: UserAddComponent},
-        {path: 'user/edit', component: UserAddComponent}
+        {path: 'user/edit', component: UserAddComponent},
+        {path: 'permissionProfileAdd', component: PermissionProfileAddComponent}
       ]
     },
     {path: '**', component: HomeComponent, pathMatch: 'full'}

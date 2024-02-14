@@ -62,7 +62,7 @@ export class PriorityAddComponent implements OnInit {
             },
             error: (err) => {
               console.log(err);
-              this.toastrService.error(err.error);
+              this.toastrService.error(err.error || "Öncelik getirilemedi.");
             }
           });
         } else {
@@ -125,7 +125,7 @@ export class PriorityAddComponent implements OnInit {
           },
           error: err => {
             console.log(err);
-            this.toastrService.error(err.error);
+            this.toastrService.error(err.error || "Öncelik eklenemedi.");
           }
         });
       } else {
@@ -141,7 +141,7 @@ export class PriorityAddComponent implements OnInit {
           },
           error: err => {
             console.log(err);
-            this.toastrService.error(err.error);
+            this.toastrService.error(err.error || "Öncelik güncellenemedi.");
           }
         });
       }

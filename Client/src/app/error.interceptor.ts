@@ -46,7 +46,7 @@ export class ErrorInterceptor implements HttpInterceptor {
               this.router.navigateByUrl('/server-error', navigationExtras);
               break;
             case 403:
-              this.toastr.error("Erişim engellendi.", error.status.toString());
+              this.toastr.error("Erişim engellendi. Bu işlem için yetkiniz yoktur.", error.status.toString());
               break;
             default:
               this.toastr.error("Beklenmeyen hata (Tekrar üye girişi yapmayı deneyin.)", error.status.toString());

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../environment';
 import { User, UserAdd } from '../_models/user';
+import { PermissionProfile } from '../_models/PermissionProfile';
 
 @Injectable({
   providedIn: 'root'
@@ -40,5 +41,9 @@ export class UserService {
 
   getPermDict() {
     return this.http.get<object>(this.baseUrl + '/permdict');
+  }
+
+  getPermissionProfiles() {
+    return this.http.get<PermissionProfile[]>(this.baseUrl + '/permissionProfiles');
   }
 }

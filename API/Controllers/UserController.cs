@@ -10,7 +10,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
-    [AllowAnonymous]
     public class UserController : BaseApiController
     {
         private readonly IMapper _mapper;
@@ -22,6 +21,7 @@ namespace API.Controllers
             _uow = uow;
         }
 
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<UserDto>> GetUsersAsync()
         {
@@ -35,6 +35,7 @@ namespace API.Controllers
             return Ok(users);
         }
 
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<UserDto>> GetUserAsync(int id)
         {
@@ -43,6 +44,7 @@ namespace API.Controllers
             return Ok(user);
         }
 
+        [Authorize(Roles = "112, 119, 113")]
         [HttpPut("add")]
         public async Task<ActionResult<UserDto>> AddUserAsync(UserDto userDto)
         {
@@ -51,6 +53,17 @@ namespace API.Controllers
             if (existingUser != null)
             {
                 return BadRequest("User already exists");
+            }
+
+            //check if userDto has any permissions
+
+            if (userDto.Permission != null)
+            {
+                //check if request has role number 119
+                if (!User.IsInRole("119") && !User.IsInRole("113"))
+                {
+                    return BadRequest("You cannot add users with permissions");
+                }
             }
 
             User user = _mapper.Map<User>(userDto);
@@ -74,9 +87,32 @@ namespace API.Controllers
             }
         }
 
+        [Authorize(Roles = "113, 120, 127")]
         [HttpPost("update/{id}")]
         public async Task<ActionResult<UserDto>> UpdateUserAsync(int id, UserDto userDto)
         {
+            //check if user exists
+            UserDto existingUser = await _uow.UserRepository.GetUserDtoAsync(id);
+
+            //check if user is admin
+
+
+            if (existingUser == null)
+            {
+                return BadRequest("User does not exist");
+            }
+
+            //check if existing user has any permissions
+
+            if (existingUser.Permission != null)
+            {
+                //check if request has role number 120
+                if (!User.IsInRole("120") && !User.IsInRole("113"))
+                {
+                    return BadRequest("User has permissions. You cannot update users with permissions");
+                }
+            }
+
             var ok = await _uow.UserRepository.UpdateUserAsync(id, userDto);
 
             if (ok)
@@ -89,9 +125,30 @@ namespace API.Controllers
             }
         }
 
+        [Authorize(Roles = "113, 121, 126")]
         [HttpDelete("{id}")]
         public async Task<ActionResult<bool>> DeleteUserAsync(int id)
         {
+            //check if user exists
+
+            UserDto existingUser = await _uow.UserRepository.GetUserDtoAsync(id);
+
+            if (existingUser == null)
+            {
+                return BadRequest("User does not exist");
+            }
+
+            //check if existing user has any permissions
+
+            if (existingUser.Permission != null)
+            {
+                //check if request has role number 121
+                if (!User.IsInRole("121") && !User.IsInRole("113"))
+                {
+                    return BadRequest("User has permissions. You cannot delete users with permissions");
+                }
+            }
+
             var ok = await _uow.UserRepository.DeleteUserAsync(id);
 
             if (ok)
@@ -106,11 +163,19 @@ namespace API.Controllers
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+        [Authorize]
         [HttpGet("permdict")]
         public ActionResult<Dictionary<string, string>> GetPermDict()
         {
             var en = UserPermissionHelper.GetPermissionsDict();
             return Ok(en);
+        }
+
+        [Authorize]
+        [HttpGet("permissionProfiles")]
+        public async Task<ActionResult<List<PermissionProfile>>> GetProfilesAsync()
+        {
+            return Ok(await _uow.UserRepository.GetPermissionProfilesAsync());
         }
 
     }

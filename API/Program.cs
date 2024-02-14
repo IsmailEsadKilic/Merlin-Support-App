@@ -35,6 +35,9 @@ app.UseMiddleware<ExceptionMiddleware>();
 app.UseCors(builder => builder.AllowAnyHeader().AllowAnyMethod().WithOrigins(["https://localhost:4200", "http://localhost:4200"])
     .WithExposedHeaders("content-disposition"));
 
+app.UseAuthentication();
+app.UseAuthorization();
+
 app.MapControllers();
 
 using var scope = app.Services.CreateScope();
@@ -65,6 +68,7 @@ try
     await SeedData.SeedProducts(context);
     await SeedData.SeedCustomerProductLists(context);
     await SeedData.SeedTickets(context);
+    await SeedData.SeedPermissionProfiles(context);
 }
 catch (Exception ex)
 {

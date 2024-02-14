@@ -9,7 +9,6 @@ using Microsoft.JSInterop;
 
 namespace API.Controllers
 {
-    [AllowAnonymous]
     public class ProductController : BaseApiController
     {
         private readonly IMapper _mapper;
@@ -22,24 +21,28 @@ namespace API.Controllers
 
         }
 
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<ProductDto>> GetProductsAync()
         {
             return Ok(await _uow.ProductRepository.GetProductDtosAsync());
         }
 
+        [Authorize]
         [HttpGet("customer/{id}")]
         public async Task<ActionResult<List<ProductDto>>> GetProductsByCustomerIdAsync(int id)
         {
             return Ok(await _uow.ProductRepository.GetProductDtosByCustomerIdAsync(id));
         }
 
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<ProductDto>> GetProductAsync(int id)
         {
             return Ok(await _uow.ProductRepository.GetProductDtoAsync(id));
         }
 
+        [Authorize(Roles = "113, 140")]
         [HttpPut("add")]
         public async Task<ActionResult<ProductDto>> AddProductAsync(ProductDto productDto)
         {
@@ -59,7 +62,8 @@ namespace API.Controllers
 
         }
 
-        [HttpPut("update/{id}")]
+        [Authorize(Roles = "141, 113")]
+        [HttpPost("update/{id}")]
         public async Task<ActionResult<ProductDto>> UpdateProductAsync(int id, ProductDto productDto)
         {
             var ok = await _uow.ProductRepository.UpdateProductAsync(id, productDto);
@@ -74,6 +78,7 @@ namespace API.Controllers
             }
         }
 
+        [Authorize(Roles = "142, 113")]
         [HttpDelete("{id}")]
         public async Task<ActionResult<bool>> DeleteProductAsync(int id)
         {
@@ -94,18 +99,21 @@ namespace API.Controllers
 
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+        [Authorize]
         [HttpGet("customerProductList")]
         public async Task<ActionResult<List<CustomerProductListDto>>> GetCustomerProductListsAsync()
         {
             return Ok(await _uow.ProductRepository.GetCustomerProductListDtosAsync());
         }
 
+        [Authorize]
         [HttpGet("customerProductList/{id}")]
         public async Task<ActionResult<CustomerProductListDto>> GetCustomerProductListAsync(int id)
         {
             return Ok(await _uow.ProductRepository.GetCustomerProductListDtoAsync(id));
         }
 
+        [Authorize(Roles = "113, 148")]
         [HttpPut("customerProductList/add")]
         public async Task<ActionResult<ProductDto>> AddCustomerProductListAsync(CustomerProductListDto customerProductListDto)
         {
@@ -124,7 +132,8 @@ namespace API.Controllers
             }
         }
 
-        [HttpPut("customerProductList/update/{id}")]
+        [Authorize(Roles = "149, 113")]
+        [HttpPost("customerProductList/update/{id}")]
         public async Task<ActionResult<CustomerProductListDto>> UpdateCustomerProductListAsync(int id, CustomerProductListDto customerProductListDto)
         {
             var ok = await _uow.ProductRepository.UpdateCustomerProductListAsync(id, customerProductListDto);
@@ -139,6 +148,7 @@ namespace API.Controllers
             }
         }
 
+        [Authorize(Roles = "150, 151, 113")]
         [HttpDelete("customerProductList/{id}")]
         public async Task<ActionResult<bool>> DeleteCustomerProductListAsync(int id)
         {

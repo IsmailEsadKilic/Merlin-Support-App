@@ -32,12 +32,22 @@
         <hr>
         <h2 style="text-align: center;">İzinler</h2>
         <!-- checkall -->
-        <div class="col-md-6">
+        <div class="col-md-5">
             <input type="checkbox" [value]="all" [(ngModel)] = "all" [ngModelOptions]="{standalone: true}" (change)="allFn()">
             <button class="btn tgbtn" (click)="all = !all; allFn();">Tümünü Seç</button>
         </div>
+        <div class="col-md-5">
+            <select class="form-select" (change)="permissionProfileChange($event.target)">
+                <option selected disabled value="0">Profillerden Seç</option>
+                <option *ngFor="let profile of permissionProfiles" [value]="profile.id">{{profile.profileName}}</option>
+            </select>            
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-primary" routerLink="/permissionProfileAdd" routerLinkActive="active">Profil Ekle</button>
+            <button class="btn btn-danger">delete (to do)</button>
+        </div>
         <div class="row mt-3">
-            <div *ngFor="let permission of permissionDescriptions" class="col-md-6 mt-2">
+            <div *ngFor="let permission of permissionDescriptions" class="col-md-4 mt-1">
                 <input type="checkbox" [value]="permission.value " [(ngModel)] = "permission.value" [ngModelOptions]="{standalone: true}">
                 <button class="btn tgbtn" (click)="permission.value = !permission.value">{{permission.label}}</button>
             </div>

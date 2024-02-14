@@ -139,3 +139,4 @@ C:\projects\Merlin Support App Local\API\obj\Debug\net8.0\API.pdb
 C:\projects\Merlin Support App Local\API\obj\Debug\net8.0\API.genruntimeconfig.cache
 C:\projects\Merlin Support App Local\API\obj\Debug\net8.0\ref\API.dll
 C:\projects\Merlin Support App Local\API\bin\Debug\net8.0\CustomerCustomData.json
+C:\projects\Merlin Support App Local\API\obj\Debug\net8.0\API.sourcelink.json

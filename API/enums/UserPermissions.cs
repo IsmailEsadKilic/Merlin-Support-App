@@ -111,6 +111,9 @@ namespace API.enums
 
         CanDeletePriority = 155,
 
+        
+        CanEditTicket = 156
+
     }
 
     class UserPermissionHelper
@@ -120,56 +123,84 @@ namespace API.enums
             var dict = new Dictionary<string, string>
             {
                 { "101", "Müşteri Tanimlama ve Düzeltme" },
+
                 { "102", "Müşteri Adina Ticket Acma" },
+
                 { "103", "Müsteri Kullanicisi tanimlayabilir." },
+
                 { "108", "Ticket Dağitma(Yönetici)" },
+
                 { "109", "Ayni ekipdeki kullanicilarin ticketlerini görebilir" },
                 { "110", "Ayni ekipdeki kullanicilarin ticketlerini düzeltebilir" },
+
                 { "111", "Kendisine acilan ticketi başkasina atayabilir" },
+
                 { "112", "Kullanici Tanimlayabilir" },
+
                 { "113", "Admin" },
+
                 { "114", "Ticket Silme" },
+
                 { "115", "Raporlamada tüm takimi görebilir" },
+
                 { "116", "Lisans Ekleme" },
                 { "117", "Lisans Düzenleme" },
                 { "118", "Lisans Silme" },
+
                 { "119", "Yetkili Kullanici Ekleme" },
                 { "120", "Yetkili Kullanici Düzenleme" },
                 { "121", "Yetkili Kullanici Silme" },
+
                 { "122", "Doküman Ekleme" },
                 { "123", "Doküman Düzenleme" },
                 { "124", "Doküman Silme" },
+
                 { "125", "Rapor Alma" },
+
                 { "126", "Kullanici Silme" },
                 { "127", "Kullanici Düzenleme" },
+
                 { "128", "Müşteri Silme" },
+
                 { "129", "Dashboard Görme" },
+
                 { "130", "Contact Center Görme" },
+
                 { "131", "Çağri Aktarma Görme" },
                 { "132", "Çağri Aktarma Raporu Görme" },
+
                 { "133", "Periyodik Ticket Ekleme" },
+
                 { "134", "Tüm Ticketleri Görme" },
+
                 { "135", "Ticket Ekleme" },
+
                 { "136", "Takim Ekleme" },
                 { "137", "Takim Düzenleme" },
                 { "138", "Takim Kaldirma" },
                 { "139", "Takim Silme" },
+
                 { "140", "Ürün Ekleme" },
                 { "141", "Ürün Düzenleme" },
                 { "142", "Ürün Kaldirma" },
                 { "143", "Ürün Silme" },
+
                 { "144", "Ticket Tipi Ekleme" },
                 { "145", "Ticket Tipi Düzenleme" },
                 { "146", "Ticket Tipi Kaldirma" },
                 { "147", "Ticket Tipi Silme" },
+
                 { "148", "Müşteri Ürün Lisansi Ekleme" },
                 { "149", "Müşteri Ürün Lisansi Düzenleme" },
                 { "150", "Müşteri Ürün Lisansi Kaldirma" },
                 { "151", "Müşteri Ürün Lisansi Silme" },
+
                 { "152", "Öncelik Ekleme" },
                 { "153", "Öncelik Düzenleme" },
                 { "154", "Öncelik Kaldirma" },
-                { "155", "Öncelik Silme" }
+                { "155", "Öncelik Silme" },
+
+                { "156", "Ticket Düzenleme" }
             };
 
             return dict;

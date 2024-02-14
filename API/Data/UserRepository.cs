@@ -36,6 +36,13 @@ namespace API.Data
 
         public async Task<int> AddUserAsync(User user)
         {
+            //sanitize permission
+            //"101|105|113", sorted and unique, only numbers
+            var permission = user.Permission;
+            var sanitizedPermission = string.Join("|", permission.Split('|').Select(int.Parse).Distinct().OrderBy(x => x));
+
+            user.Permission = sanitizedPermission;
+
             await _context.Users.AddAsync(user);
             await _context.SaveChangesAsync();
             return user.Id;
@@ -50,16 +57,21 @@ namespace API.Data
                 return false;
             }
 
-            user.Permission = userDto.Permission;
+            //sanitize permission
+            //"101|105|113", sorted and unique, only numbers
+            var permission = userDto.Permission;
+            var sanitizedPermission = string.Join("|", permission.Split('|').Select(int.Parse).Distinct().OrderBy(x => x));
+
+            user.Permission = sanitizedPermission;
             user.NameSurname = userDto.NameSurname;
             user.UserName = userDto.UserName;
             user.Email = userDto.Email;
             user.Gsml = userDto.Gsml;
 
-            var inputPassword = userDto.Password;
-            ICryptology cryptoMerlin = CryptologyServiceLocator.CryptologyProvider("UserCrypto");
-            var encryptedPassword = cryptoMerlin.Encrypt(inputPassword);
-            user.Password = encryptedPassword;
+            // var inputPassword = userDto.Password;
+            // ICryptology cryptoMerlin = CryptologyServiceLocator.CryptologyProvider("UserCrypto");
+            // var encryptedPassword = cryptoMerlin.Encrypt(inputPassword);
+            // user.Password = encryptedPassword;
 
             _context.Entry(user).State = EntityState.Modified;
 
@@ -78,6 +90,11 @@ namespace API.Data
             _context.Users.Remove(user);
 
             return await _context.SaveChangesAsync() > 0;
+        }
+
+        public async Task<IEnumerable<PermissionProfile>> GetPermissionProfilesAsync()
+        {
+            return await _context.Profiles.ToListAsync();
         }
     }
 }

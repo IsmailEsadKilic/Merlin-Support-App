@@ -10,7 +10,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
-    [AllowAnonymous]
     public class TeamController : BaseApiController
     {
         private readonly IMapper _mapper;
@@ -22,26 +21,25 @@ namespace API.Controllers
             _uow = uow;
         }
 
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<TeamDto>> GetTeamsAsync()
         {
             return Ok(await _uow.TeamRepository.GetTeamDtosAsync());
         }
 
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<TeamDto>> GetTeamAsync(int id)
         {
             return Ok(await _uow.TeamRepository.GetTeamDtoAsync(id));
         }
 
+        [Authorize(Roles = "113, 136")]
         [HttpPut("add")]
         public async Task<ActionResult<TeamDto>> AddTeamAsync(TeamDto teamDto)
         {
-            //json log
 
-            Console.WriteLine("TeamController.AddTeamAsync()");
-            Console.WriteLine(JsonSerializer.Serialize(teamDto));
-            
 
             Team team = _mapper.Map<Team>(teamDto);
             team.RowGuid = Guid.NewGuid().ToString();
@@ -58,6 +56,7 @@ namespace API.Controllers
             }
         }
 
+        [Authorize(Roles = "113, 137")]
         [HttpPost("update/{id}")]
         public async Task<ActionResult<TeamDto>> UpdateTeamAsync(int id, TeamUpdateRequest updateRequest)
         {
@@ -73,6 +72,7 @@ namespace API.Controllers
             }
         }
 
+        [Authorize(Roles = "113, 138, 139")]
         [HttpDelete("{id}")]
         public async Task<ActionResult<bool>> DeleteTeamAsync(int id)
         {

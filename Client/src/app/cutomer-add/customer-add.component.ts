@@ -82,7 +82,7 @@ export class CustomerAddComponent implements OnInit {
           },
           error: err => {
             console.log(err);
-            this.toastrService.error(err.error);
+            this.toastrService.error(err.error || "Müşteri bulunamadı.");
           }
         });
       } else {
@@ -145,7 +145,7 @@ export class CustomerAddComponent implements OnInit {
         },
         error: err => {
           console.log(err);
-          this.toastrService.error(err.error);
+          this.toastrService.error(err.error || "Müşteri eklenirken hata oluştu.");
           this.customerAddFormErrors.push(err.error);
         }
       });

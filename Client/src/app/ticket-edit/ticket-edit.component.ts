@@ -106,10 +106,10 @@ export class TicketEditComponent implements OnInit {
                 
                 this.initTicketEditForm();
               },
-              error: err => this.toastrService.error(err.error, "Error")
+              error: err => this.toastrService.error(err.error || "error" , "Error")
             });
           },
-          error: err => this.toastrService.error(err.error, "Error")
+          error: err => this.toastrService.error(err.error || "error" , "Error")
         })
 
         //get ticket nodes
@@ -118,7 +118,7 @@ export class TicketEditComponent implements OnInit {
           next: ticketNodes => {
             this.ticketNodes = ticketNodes;
           },
-          error: err => this.toastrService.error(err.error, "Error")
+          error: err => this.toastrService.error(err.error || "error" , "Error")
         });
       }
     });
@@ -155,7 +155,7 @@ export class TicketEditComponent implements OnInit {
         this.resetTicketEditForm();
       },
       error: err => {
-        this.toastrService.error(err.error, "Error");
+        this.toastrService.error(err.error || "error" , "Error");
       }
     });
 
@@ -199,7 +199,7 @@ export class TicketEditComponent implements OnInit {
         }
       },
       error: err => {
-        this.toastrService.error(err.error, "Error");
+        this.toastrService.error(err.error || "error" , "Error");
       }
     });
   }

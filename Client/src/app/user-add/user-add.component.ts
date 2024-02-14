@@ -1,9 +1,10 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
 import { UserService } from '../_services/user.service';
 import { UserAdd, permissionDescription } from '../_models/user';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute, Router } from '@angular/router';
+import { PermissionProfile } from '../_models/PermissionProfile';
 
 @Component({
   selector: 'app-user-add',
@@ -32,6 +33,7 @@ export class UserAddComponent implements OnInit{
   permdict: {[key: number]: string} = {}; // {101: "create user", 102: "create customer", ...}
   permissionDescriptions: permissionDescription[] = [];
   all: boolean = false;
+  permissionProfiles: PermissionProfile[] = [];
 
   constructor(private userService: UserService, private toastrService: ToastrService, private route: ActivatedRoute, private router: Router) { }
 
@@ -53,18 +55,25 @@ export class UserAddComponent implements OnInit{
             this.userPermission = response.permission
             this.userService.getPermDict().subscribe(permissions => {
               this.permdict = Object.fromEntries(Object.entries(permissions));
-              this.InitUserAddForm();
+              this.userService.getPermissionProfiles().subscribe(permissionProfiles => {
+                this.permissionProfiles = permissionProfiles;
+                this.InitUserAddForm();
+              });
             });
           },
           error: (err) => {
             console.log(err);
-            this.toastrService.error(err.error);
+            this.toastrService.error(err.error || "Kullanıcı bulunamadı.");
           }
         });
       } else {
         this.userService.getPermDict().subscribe(permissions => {
           this.permdict = Object.fromEntries(Object.entries(permissions));
-          this.InitUserAddForm();
+          this.userService.getPermissionProfiles().subscribe(permissionProfiles => {
+            this.permissionProfiles = permissionProfiles;
+            console.log(this.permissionProfiles);
+            this.InitUserAddForm();
+          });
         });
       }
     });
@@ -79,12 +88,6 @@ export class UserAddComponent implements OnInit{
     if (this.userId > 0) {
       this.userAddForm.reset(this.userAdd);
       
-      //reset checkboxes
-
-      var perms = this.userPermission.split("|");
-      this.permissionDescriptions.forEach(permissionDescription => {
-        permissionDescription.value = perms.includes(permissionDescription.identifier);
-      });
     } else {
       this.userAddForm.reset();
       //reset checkboxes
@@ -121,7 +124,7 @@ export class UserAddComponent implements OnInit{
         },
         error: err => {
           console.log(err);
-          this.toastrService.error(err.error);
+          this.toastrService.error(err.error || "Kullanıcı eklenemedi.");
           this.userAddFormErrors.push(err.error);
         }
       });
@@ -138,7 +141,7 @@ export class UserAddComponent implements OnInit{
         },
         error: err => {
           console.log(err);
-          this.toastrService.error(err.error);
+          this.toastrService.error(err.error || "Kullanıcı düzenlenemedi.");
           this.userAddFormErrors.push(err.error);
         }
       });
@@ -149,11 +152,16 @@ export class UserAddComponent implements OnInit{
     this.userAddForm = new FormGroup({
       nameSurname: new FormControl(this.userAdd.nameSurname, Validators.required),
       userName: new FormControl(this.userAdd.userName, Validators.required),
-      password: new FormControl(this.userAdd.password, Validators.required),
+      // password: new FormControl(this.userAdd.password, Validators.required),
       email: new FormControl(this.userAdd.email, Validators.required),
       gsml: new FormControl(this.userAdd.gsml, Validators.required)
     });
 
+    //add password field if new user
+    if (this.userId == 0) {
+      this.userAddForm.addControl("password", new FormControl(this.userAdd.password, Validators.required));
+    }
+    
     //perms are tickboxes
 
     if (this.userId > 0) {
@@ -176,5 +184,21 @@ export class UserAddComponent implements OnInit{
       permissionDescription.value = this.all;
     });
   }
+
+  permissionProfileChange(arg: any) {
+    if (arg.value) {
+      this.selectProfile(+arg.value);
+    }
+  }
+
+  selectProfile(profileId: number) {
+    let profile = this.permissionProfiles.find(profile => profile.id == profileId);
+    if (profile) {
+      this.permissionDescriptions.forEach(permissionDescription => {
+        permissionDescription.value = profile!.permission.split("|").includes(permissionDescription.identifier);
+      });
+    }
+  }
+
   legacy: boolean = false;
 }

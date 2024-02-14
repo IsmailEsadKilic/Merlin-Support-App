@@ -16,7 +16,6 @@ using Microsoft.Extensions.Logging;
 
 namespace API.Controllers
 {
-    [AllowAnonymous]
     public class CustomerController : BaseApiController
     {
         private readonly IMapper _mapper;
@@ -29,18 +28,21 @@ namespace API.Controllers
 
         }
 
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<CustomerDto>> GetCustomersAsync()
         {
             return Ok(await _uow.CustomerRepository.GetCustomerDtosAsync());
         }
 
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<CustomerDto>> GetCustomerAsync(int id)
         {
             return Ok(await _uow.CustomerRepository.GetCustomerDtoAsync(id));
         }
 
+        [Authorize(Roles = "101, 103, 113")]
         [HttpPut("add")]
         public async Task<ActionResult<CustomerDto>> AddCustomerAsync(CustomerDto customerDto)
         {   
@@ -61,6 +63,7 @@ namespace API.Controllers
             }
         }
 
+        [Authorize(Roles = "101, 113")]
         [HttpPost("update/{id}")]
         public async Task<ActionResult<CustomerDto>> UpdateCustomerAsync(int id, CustomerUpdateRequest updateRequest)
         {
@@ -76,6 +79,7 @@ namespace API.Controllers
             }
         }
 
+        [Authorize(Roles = "128, 113")]
         [HttpDelete("{id}")]
         public async Task<ActionResult<bool>> DeleteCustomerAsync(int id)
         {
@@ -93,6 +97,7 @@ namespace API.Controllers
 
         ///////////////////////////////////////////////////////////////////////////////////////////////
 
+        [Authorize]
         [HttpGet("CustomPropertyDescriptors")]
         public async Task<ActionResult<List<CustomPropertyDescriptor>>> GetCustomPropertyDescriptors()
         {

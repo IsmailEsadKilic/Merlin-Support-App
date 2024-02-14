@@ -12,7 +12,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
-    [AllowAnonymous]
     public class AccountController : BaseApiController
     {
         private readonly DataContext _context;
@@ -26,6 +25,7 @@ namespace API.Controllers
 
         }
 
+        [AllowAnonymous]
         [HttpPost("login")]
         public ActionResult<string> Login([FromBody] LoginDto loginDto)
         {
@@ -47,6 +47,7 @@ namespace API.Controllers
             return Ok(userDto);
         }
 
+        [Authorize]
         [HttpPost("changePassword")] // PUT: api/account/change-password
         public async Task<ActionResult<bool>> ChangePassword(ChangePasswordDto changePasswordDto)
         {

@@ -47,7 +47,7 @@ export class TicketTypeAddComponent implements OnInit{
           },
           error: (err) => {
             console.log(err);
-            this.toastrService.error(err.error);
+            this.toastrService.error(err.error || "Ticket Tipi bulunamadı.");
           }
         });
       } else {
@@ -97,7 +97,7 @@ export class TicketTypeAddComponent implements OnInit{
         },
         error: err => {
           console.log(err);
-          this.toastrService.error(err.error);
+          this.toastrService.error(err.error || "Ticket Tipi eklenemedi.");
           this.ticketTypeAddFormErrors.push(err.error);
         }
       });
@@ -114,7 +114,7 @@ export class TicketTypeAddComponent implements OnInit{
         },
         error: err => {
           console.log(err);
-          this.toastrService.error(err.error);
+          this.toastrService.error(err.error || "Ticket Tipi güncellenemedi.");
           this.ticketTypeAddFormErrors.push(err.error);
         }
       });

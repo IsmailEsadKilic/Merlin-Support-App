@@ -46,7 +46,7 @@ export class ProductAddComponent implements OnInit{
           },
           error: (err) => {
             console.log(err);
-            this.toastrService.error(err.error);
+            this.toastrService.error(err.error || "Ürün bulunamadı.");
           }
         });
       } else {
@@ -90,7 +90,7 @@ export class ProductAddComponent implements OnInit{
         },
         error: (err) => {
           console.log(err);
-          this.toastrService.error(err.error);
+          this.toastrService.error(err.error || "Ürün eklenemedi.");
           this.productAddFormErrors.push(err.error);
         }
       });
@@ -107,7 +107,7 @@ export class ProductAddComponent implements OnInit{
         },
         error: (err) => {
           console.log(err);
-          this.toastrService.error(err.error);
+          this.toastrService.error(err.error || "Ürün güncellenemedi.");
           this.productAddFormErrors.push(err.error);
         }
       });

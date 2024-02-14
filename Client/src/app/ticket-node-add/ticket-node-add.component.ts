@@ -42,7 +42,7 @@ export class TicketNodeAddComponent implements OnInit {
       error: err => {
         console.log(err);
         this.toastrService.error("Cevap eklenirken hata oluştu.");
-        this.toastrService.error(err.error);
+        this.toastrService.error(err.error || "Bilinmeyen bir hata oluştu.");
       }
     })
   }

@@ -23,5 +23,6 @@ namespace API.Data
         public DbSet<UploadFile> UploadFiles { get; set; }
         public DbSet<TicketNode> TicketNodes { get; set; }
         public DbSet<TicketOwnerDetail> TicketOwnerDetails { get; set; }
+        public DbSet<PermissionProfile> Profiles { get; set; }
     }
 }
