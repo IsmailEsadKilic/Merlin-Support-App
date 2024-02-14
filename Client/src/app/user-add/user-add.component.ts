@@ -33,7 +33,9 @@ export class UserAddComponent implements OnInit{
   permdict: {[key: number]: string} = {}; // {101: "create user", 102: "create customer", ...}
   permissionDescriptions: permissionDescription[] = [];
   all: boolean = false;
+
   permissionProfiles: PermissionProfile[] = [];
+  SelectedProfileId: number = 0;
 
   constructor(private userService: UserService, private toastrService: ToastrService, private route: ActivatedRoute, private router: Router) { }
 
@@ -71,7 +73,6 @@ export class UserAddComponent implements OnInit{
           this.permdict = Object.fromEntries(Object.entries(permissions));
           this.userService.getPermissionProfiles().subscribe(permissionProfiles => {
             this.permissionProfiles = permissionProfiles;
-            console.log(this.permissionProfiles);
             this.InitUserAddForm();
           });
         });
@@ -187,7 +188,9 @@ export class UserAddComponent implements OnInit{
 
   permissionProfileChange(arg: any) {
     if (arg.value) {
-      this.selectProfile(+arg.value);
+      var val = +arg.value
+      this.SelectedProfileId = val;
+      this.selectProfile(val);
     }
   }
 
@@ -198,6 +201,27 @@ export class UserAddComponent implements OnInit{
         permissionDescription.value = profile!.permission.split("|").includes(permissionDescription.identifier);
       });
     }
+  }
+
+  deleteSeletedProfile() {
+    if (!confirm("Silmek istediğinize emin misiniz?")) {
+      return;
+    }
+    this.userService.deletePermissionProfile(this.SelectedProfileId).subscribe({
+      next: response => {
+        if (response) {
+          this.toastrService.success("İşlem başarılı.");
+          this.permissionProfiles = this.permissionProfiles.filter(profile => profile.id != this.SelectedProfileId);
+          this.SelectedProfileId = 0;
+        } else {
+          this.toastrService.error("İşlem başarısız.");
+        }
+      },
+      error: error => {
+        this.toastrService.error("Error: " + error);
+      }
+    });
+
   }
 
   legacy: boolean = false;

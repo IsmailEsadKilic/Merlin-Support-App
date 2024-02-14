@@ -178,5 +178,55 @@ namespace API.Controllers
             return Ok(await _uow.UserRepository.GetPermissionProfilesAsync());
         }
 
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        [Authorize(Roles = "113, 157")]
+        [HttpPut("permissionProfiles/add")]
+        public async Task<ActionResult<PermissionProfile>> AddProfileAsync(PermissionProfile profile)
+        {
+            Console.WriteLine("Profile: " + profile.ProfileName + " " + profile.Permission);
+            var existingProfile = await _uow.UserRepository.GetPermissionProfileAsync(profile.Id);
+
+            if (existingProfile != null)
+            {
+                return BadRequest("Profile already exists");
+            }
+
+            var id = await _uow.UserRepository.AddPermissionProfileAsync(profile);
+
+            if (await _uow.Complete() || id > 0)
+            {
+                return Ok(await _uow.UserRepository.GetPermissionProfileAsync(id));
+            }
+            else
+            {
+                return BadRequest("Failed to add profile");
+            }
+        }
+
+        [Authorize(Roles = "113, 158")]
+        [HttpDelete("permissionProfiles/{id}")]
+        public async Task<ActionResult<bool>> DeleteProfileAsync(int id)
+        {
+            var existingProfile = await _uow.UserRepository.GetPermissionProfileAsync(id);
+
+            if (existingProfile == null)
+            {
+                return BadRequest("Profile does not exist");
+            }
+
+            var ok = await _uow.UserRepository.DeletePermissionProfileAsync(id);
+
+            if (ok)
+            {
+                return Ok(true);
+            }
+            else
+            {
+                return BadRequest("Failed to delete profile");
+            }
+        }
+
     }
 }

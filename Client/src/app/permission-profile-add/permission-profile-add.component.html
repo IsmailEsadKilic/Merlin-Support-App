@@ -1,2 +1,32 @@
-<!-- <button class="btn btn-primary" routerlink="/ -->
-    hi
+<button class="btn btn-primary" (click)="goBackToPrevPage()">Geri Dön</button>
+<h1 style="text-align: center;"> İzin Profili Ekle</h1>
+<form *ngIf="formInitialised" [formGroup]="form" autocomplete="off">
+    <div class="row">
+        <div class="col-md-6">
+            <label>Profil Adı</label>
+            <strong> *</strong>
+            <app-text-input [formControl]="$any(form.controls['PermissionProfileName'])" [label]="'Profil Adı'"></app-text-input>
+        </div>
+        <hr>
+        <h2 style="text-align: center;">İzinler</h2>
+        <!-- checkall -->
+        <div class="col-md-5">
+            <input type="checkbox" [value]="all" [(ngModel)] = "all" [ngModelOptions]="{standalone: true}" (change)="allFn()">
+            <button class="btn tgbtn" (click)="all = !all; allFn();">Tümünü Seç</button>
+        </div>
+        <div class="row mt-3">
+            <div *ngFor="let permission of permissionDescriptions" class="col-md-4 mt-1">
+                <input type="checkbox" [value]="permission.value " [(ngModel)] = "permission.value" [ngModelOptions]="{standalone: true}">
+                <button class="btn tgbtn" (click)="permission.value = !permission.value">{{permission.label}}</button>
+            </div>
+        </div>
+        <div class="row" *ngIf="formErrors">
+            <ul class="text-danger">
+                <li *ngFor="let error of formErrors">{{error}}</li>
+            </ul>
+        </div>
+    </div>
+</form>
+<button class="btn btn-success me-2" (click)="submit()">Kaydet</button>
+<button class="btn btn-warning me-2" type="button" (click)="resetForm()">Temizle</button>
+<button class="btn btn-primary" (click)="goBackToPrevPage()">Geri Dön</button>

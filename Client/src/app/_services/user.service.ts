@@ -46,4 +46,12 @@ export class UserService {
   getPermissionProfiles() {
     return this.http.get<PermissionProfile[]>(this.baseUrl + '/permissionProfiles');
   }
+
+  addPermissionProfile(profileName: string, permission: string) {
+    return this.http.put<PermissionProfile>(this.baseUrl + '/permissionProfiles/add', {profileName, permission});
+  }
+
+  deletePermissionProfile(id: number) {
+    return this.http.delete(this.baseUrl + '/permissionProfiles/' + id);
+  }
 }

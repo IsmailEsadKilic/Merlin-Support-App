@@ -112,7 +112,11 @@ namespace API.enums
         CanDeletePriority = 155,
 
         
-        CanEditTicket = 156
+        CanEditTicket = 156,
+
+        //profile controls
+        CanCreateProfile = 157,
+        CanDeleteProfile = 158
 
     }
 
@@ -200,7 +204,10 @@ namespace API.enums
                 { "154", "Öncelik Kaldirma" },
                 { "155", "Öncelik Silme" },
 
-                { "156", "Ticket Düzenleme" }
+                { "156", "Ticket Düzenleme" },
+
+                { "157", "Profil Ekleme" },
+                { "158", "Profil Silme" }
             };
 
             return dict;

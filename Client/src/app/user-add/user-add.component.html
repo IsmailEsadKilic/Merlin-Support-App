@@ -33,8 +33,8 @@
         <h2 style="text-align: center;">İzinler</h2>
         <!-- checkall -->
         <div class="col-md-5">
-            <input type="checkbox" [value]="all" [(ngModel)] = "all" [ngModelOptions]="{standalone: true}" (change)="allFn()">
-            <button class="btn tgbtn" (click)="all = !all; allFn();">Tümünü Seç</button>
+            <input type="checkbox" [value]="all" [(ngModel)] = "all" [ngModelOptions]="{standalone: true}" (change)="allFn()" [disabled]="SelectedProfileId > 0">
+            <button class="btn tgbtn" (click)="all = !all; allFn();" [disabled]="SelectedProfileId > 0">Tümünü Seç</button>
         </div>
         <div class="col-md-5">
             <select class="form-select" (change)="permissionProfileChange($event.target)">
@@ -43,13 +43,14 @@
             </select>            
         </div>
         <div class="col-md-2">
-            <button class="btn btn-primary" routerLink="/permissionProfileAdd" routerLinkActive="active">Profil Ekle</button>
-            <button class="btn btn-danger">delete (to do)</button>
+            <button class="btn btn-primary me-1" routerLink="/permissionProfileAdd" routerLinkActive="active">Profil Ekle</button>
+            <button *ngIf="SelectedProfileId > 0" (click)="deleteSeletedProfile()" class="btn btn-danger">Profili Sil</button>
         </div>
+        
         <div class="row mt-3">
             <div *ngFor="let permission of permissionDescriptions" class="col-md-4 mt-1">
-                <input type="checkbox" [value]="permission.value " [(ngModel)] = "permission.value" [ngModelOptions]="{standalone: true}">
-                <button class="btn tgbtn" (click)="permission.value = !permission.value">{{permission.label}}</button>
+                <input type="checkbox" [value]="permission.value " [(ngModel)] = "permission.value" [ngModelOptions]="{standalone: true}" [disabled]="SelectedProfileId > 0">
+                <button class="btn tgbtn" (click)="permission.value = !permission.value" [disabled]="SelectedProfileId > 0" >{{permission.label}}</button>
             </div>
         </div>
     </div>

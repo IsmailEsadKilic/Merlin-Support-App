@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from 'express';
 import { ToastrService } from 'ngx-toastr';
 import { permissionDescription } from '../_models/user';
 import { UserService } from '../_services/user.service';
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-permission-profile-add',
@@ -15,14 +16,15 @@ export class PermissionProfileAddComponent {
   permission: string = ""
 
   formInitialised: boolean = false;
-  form = new FormGroup({});
+  form: FormGroup = new FormGroup({});
   formErrors: string[] = [];
 
   permdict: {[key: number]: string} = {}; // {101: "create user", 102: "create customer", ...}
   permissionDescriptions: permissionDescription[] = [];
   all: boolean = false;
 
-  constructor(private userService: UserService, private toastrService: ToastrService, private router: Router) { }
+  constructor(private userService: UserService, private toastrService: ToastrService,
+    private router: Router, private location: Location) { }
 
   ngOnInit(): void {
     this.userService.getPermDict().subscribe({
@@ -34,6 +36,10 @@ export class PermissionProfileAddComponent {
         this.toastrService.error("Error: " + error);
       }
     });
+  }
+
+  onSubmit() {
+    this.submit();
   }
 
   submit() {
@@ -51,21 +57,31 @@ export class PermissionProfileAddComponent {
     .map(x => x.identifier)
     .join('|');
 
-    // this.userService.addPermissionProfile(this.PermissionProfileName, this.permission).subscribe({
-    //   next: response => {
-    //     this.toastrService.success("İşlem başarılı.");
-    //     this.router.navigate(['/permission-profile-list']);
-    //   },
-    //   error: error => {
-    //     console.log(error);
-    //     this.toastrService.error("Error: " + error);
-    //     this.formErrors.push("Error: " + error);
-    //   }
-    // });
+    console.log(this.permissionDescriptions)
+    console.log(this.permission);
+    console.log(this.PermissionProfileName);
+
+    this.userService.addPermissionProfile(this.PermissionProfileName, this.permission).subscribe({
+      next: response => {
+        if (response) {
+          this.toastrService.success("İşlem başarılı.");
+          this.resetForm();
+        } else {
+          this.toastrService.error("İşlem başarısız.");
+        }
+      },
+      error: error => {
+        console.log(error);
+        this.toastrService.error("Error: " + error);
+        this.formErrors.push("Error: " + error);
+      }
+    });
 
   }
 
   resetForm() {
+    this.PermissionProfileName = "";
+    this.permission = "";
     this.form.reset();
   }
 
@@ -83,6 +99,10 @@ export class PermissionProfileAddComponent {
     this.permissionDescriptions.forEach(permissionDescription => {
       permissionDescription.value = this.all;
     });
+  }
+
+  goBackToPrevPage(): void {
+    this.location.back();
   }
 
 }

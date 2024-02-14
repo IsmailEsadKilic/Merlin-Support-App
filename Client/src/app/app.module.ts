@@ -47,6 +47,7 @@ import { TicketNodeAddComponent } from './ticket-node-add/ticket-node-add.compon
 import { FileDisplayComponent } from './file-display/file-display.component';
 import { MemberNamesPipe } from './pipes/member-names.pipe';
 import { PermissionProfileAddComponent } from './permission-profile-add/permission-profile-add.component';
+import { HasRoleDirective } from './_directives/has-role.directive';
 @NgModule({
     declarations: [
         PermissionProfileAddComponent,
@@ -109,7 +110,8 @@ import { PermissionProfileAddComponent } from './permission-profile-add/permissi
         CustomDataPipe,
         MemberNamesPipe,
         ProgressbarModule.forRoot(),
-        NgxFilesizeModule
+        NgxFilesizeModule,
+        HasRoleDirective
     ]
 })
 export class AppModule { }

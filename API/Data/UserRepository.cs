@@ -96,5 +96,31 @@ namespace API.Data
         {
             return await _context.Profiles.ToListAsync();
         }
+
+        public async Task<PermissionProfile> GetPermissionProfileAsync(int id)
+        {
+            return await _context.Profiles.FindAsync(id);
+        }
+
+        public async Task<int> AddPermissionProfileAsync(PermissionProfile profile)
+        {
+            await _context.Profiles.AddAsync(profile);
+            await _context.SaveChangesAsync();
+            return profile.Id;
+        }
+
+        public async Task<bool> DeletePermissionProfileAsync(int id)
+        {
+            PermissionProfile profile = await _context.Profiles.FindAsync(id);
+
+            if (profile == null)
+            {
+                return false;
+            }
+
+            _context.Profiles.Remove(profile);
+
+            return await _context.SaveChangesAsync() > 0;
+        }
     }
 }
