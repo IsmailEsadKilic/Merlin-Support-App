@@ -40,6 +40,7 @@
             <select class="form-select" (change)="permissionProfileChange($event.target)">
                 <option selected disabled value="0">Profillerden Seç</option>
                 <option *ngFor="let profile of permissionProfiles" [value]="profile.id">{{profile.profileName}}</option>
+                <option value="0">Custom (Kendin Seç)</option>
             </select>            
         </div>
         <div class="col-md-2">
